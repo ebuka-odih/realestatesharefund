@@ -41,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function status()
+    {
+        if ($this->status == 1)
+        {
+            return '<span class="tb-status text-success">Active</span>';
+        }
+        return '<span class="tb-status text-danger">Inactive</span>';
+    }
 }
