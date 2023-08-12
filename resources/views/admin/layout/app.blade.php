@@ -26,9 +26,8 @@
                     <a href="#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
                 </div>
                 <div class="nk-sidebar-brand">
-                    <a href="html/index.html" class="logo-link nk-sidebar-logo">
-                        <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                        <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                    <a href="{{ route('index') }}" class="logo-link nk-sidebar-logo">
+                       <h3 class="text-primary">{{ env('APP_NAME') }}</h3>
                     </a>
                 </div>
             </div><!-- .nk-sidebar-element -->
@@ -42,22 +41,22 @@
                             </li><!-- .nk-menu-item -->
 
                             <li class="nk-menu-item">
-                                <a href="html/index-invest.html" class="nk-menu-link">
+                                <a href="{{ route('admin.dashboard') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-coins"></em></span>
-                                    <span class="nk-menu-text">Invest Dashboard</span>
+                                    <span class="nk-menu-text">Dashboard</span>
                                 </a>
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-heading">
                                 <h6 class="overline-title text-primary-alt">TRANSACTIONS</h6>
                             </li><!-- .nk-menu-heading -->
                             <li class="nk-menu-item">
-                                <a href="{{ route('admin.property.index') }}" class="nk-menu-link">
+                                <a href="#" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-arrow-down-c"></em></span>
                                     <span class="nk-menu-text">Deposits</span>
                                 </a>
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item">
-                                <a href="{{ route('admin.property.index') }}" class="nk-menu-link">
+                                <a href="#" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-arrow-up"></em></span>
                                     <span class="nk-menu-text">Withdrawal</span>
                                 </a>
