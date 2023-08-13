@@ -58,8 +58,8 @@
             </div>
 
             <div class="row justify-content-center gy-4">
-
-                <div class="col-xl-4 col-md-6">
+                @foreach($property as $item)
+                    <div class="col-xl-4 col-md-6">
                     <div class="invest-card">
                         <div class="invest-card-thumb">
                             <a href="https://crowdsq.com/investment/plan/details/7" class="plan-link"></a>
@@ -76,8 +76,8 @@
 
                             <div class="thumb-bottom">
                                 <h4 class="title"><a href="https://crowdsq.com/investment/plan/details/7">
-                                        One-bedroom Apartment Close To A Mountain</a></h4>
-                                <p class="location"><i class="bi bi-geo-alt"></i> Vitosha
+                                    {{ $item->name }}</a></h4>
+                                <p class="location"><i class="bi bi-geo-alt"></i> {{ $item->building_location }}
                                 </p>
                                 <div class="property-ratings">
                                     <i class="far fa-star"></i>
@@ -94,7 +94,7 @@
                                 <div>
                                     <p>Expected Rental Income</p>
                                     <h4 class="return-amount">
-                                        5.00
+                                        {{ $item->return_rate }}
                                         %
                                     </h4>
                                 </div>
@@ -104,25 +104,25 @@
                             <div class="other-options">
                                 <div class="single-option">
                                     <p>Target Duration</p>
-                                    <h6>year</h6>
+                                    <h6>{{ $item->target_duration }} Mo</h6>
                                 </div>
                                 <div class="single-option">
                                     <p>Minimum Amount</p>
                                     <h6>
                                                                                     <span>
-                                                5,000.00 EUR</span>
+                                      {{ $item->min_price }} EUR</span>
                                     </h6>
                                 </div>
                                 <div class="single-option">
                                     <p>Return For</p>
                                     <h6>
-                                        Lifetime
+                                        {{ $item->return_for }}
                                     </h6>
                                 </div>
                                 <div class="single-option">
                                     <p>Capital Back</p>
                                     <h6>
-                                        Yes
+                                        {{ $item->captial_return }}
                                     </h6>
                                 </div>
                             </div>
@@ -135,6 +135,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <div class="text-center mt-5">
