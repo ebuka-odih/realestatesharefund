@@ -48,7 +48,7 @@
                                     <div class="col-lg-4">
                                         <div class="card card-bordered h-100">
                                             <div class="card-inner">
-                                                <form action="{{ route('admin.funding.store') }}" method="POST">
+                                                <form action="{{ route('admin.transactions.store') }}" method="POST">
                                                     @csrf
                                                     <div class="form-group">
                                                         <label class="form-label" for="full-name">Select User</label>

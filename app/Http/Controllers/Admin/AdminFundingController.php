@@ -15,7 +15,7 @@ class AdminFundingController extends Controller
     {
         $funding = Funding::all();
         $users = User::all();
-        return view('admin.funding.list', compact('funding', 'users'));
+        return view('admin.transactions.funding', compact('funding', 'users'));
     }
 
     public function store(Request $request)

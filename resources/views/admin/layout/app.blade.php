@@ -50,7 +50,7 @@
                                 <h6 class="overline-title text-primary-alt">TRANSACTIONS</h6>
                             </li><!-- .nk-menu-heading -->
                             <li class="nk-menu-item">
-                                <a href="#" class="nk-menu-link">
+                                <a href="{{ route('admin.deposits') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-arrow-down-c"></em></span>
                                     <span class="nk-menu-text">Deposits</span>
                                 </a>

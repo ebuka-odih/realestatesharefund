@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Image;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
 {
@@ -18,12 +20,14 @@ class PropertyController extends Controller
    {
 
    }
+
    public function store(Request $request)
    {
        $data = $this->getData($request);
-       Property::create($data);
-       return redirect()->back()->with('success', "Created Successfully");
+       $data = Property::create($data);
+       return redirect()->route('admin.image.store', $data->id)->with('success', "Created Successfully");
    }
+
    public function show($id)
    {
        $property = Property::findOrFail($id);
