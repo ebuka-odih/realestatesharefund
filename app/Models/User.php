@@ -50,4 +50,9 @@ class User extends Authenticatable
         }
         return '<span class="tb-status text-danger">Inactive</span>';
     }
+
+    public function funding()
+    {
+      return  $this->hasMany(Funding::class, 'user_id');
+    }
 }
