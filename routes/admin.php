@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminDepositController;
 use App\Http\Controllers\Admin\AdminFundingController;
 use App\Http\Controllers\Admin\AdminImageController;
+use App\Http\Controllers\Admin\AdminWithdrawalController;
 use App\Http\Controllers\Admin\PaymentMethodController;
 use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\Admin\UserController;
@@ -21,5 +22,8 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
     Route::resource('funding', AdminFundingController::class);
 
     Route::get('deposits', [AdminDepositController::class, 'deposits'])->name('deposits');
+    Route::get('accept/deposit/{id}', [AdminDepositController::class, 'approveDeposit'])->name('approveDeposit');
+    Route::get('withdrawal', [AdminWithdrawalController::class, 'withdrawal'])->name('withdrawal');
+
     Route::get('image', [AdminImageController::class, 'image'])->name('image');
 });

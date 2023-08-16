@@ -35,7 +35,7 @@ require __DIR__.'/auth.php';
 include 'admin.php';
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], function(){
-    Route::get('dashboard', [UserController::class])->name('dashboard');
+    Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
 });
 
