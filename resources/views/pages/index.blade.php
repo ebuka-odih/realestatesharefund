@@ -16,7 +16,7 @@
                         <div class="col-sm-4">
                             <div class="overview-item">
                                 <div class="content">
-                                    <h3 class="overview-amount">7%</h3>
+                                    <h3 class="overview-amount">15%</h3>
                                     <p class="mb-0">Average Rental Income - Commercial Property</p>
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
                         <div class="col-sm-4">
                             <div class="overview-item">
                                 <div class="content">
-                                    <h3 class="overview-amount">4%</h3>
+                                    <h3 class="overview-amount">10%</h3>
                                     <p class="mb-0">Average Rental Income - Residential Property</p>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                         <div class="col-sm-4">
                             <div class="overview-item">
                                 <div class="content">
-                                    <h3 class="overview-amount">13%</h3>
+                                    <h3 class="overview-amount">25%</h3>
                                     <p class="mb-0">Average Annual Return = Rent + Appreciation (since 2015)</p>
                                 </div>
                             </div>
@@ -402,7 +402,7 @@
                         </div>
                         <div class="content">
                             <h4 class="title">Exit Your Investment</h4>
-                            <p class="mb-0 mt-2">Get Back The Initial Investment With A Realized Profit Or Loss.</p>
+                            <p class="mb-0 mt-2">Get Back The Initial Investment With A Realized Profit.</p>
                         </div>
                     </div>
                 </div>

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Deposit extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
+    public function payment_method()
+    {
+        return $this->belongsTo(PaymentMethod::class, 'payment_methods_id');
+    }
 }

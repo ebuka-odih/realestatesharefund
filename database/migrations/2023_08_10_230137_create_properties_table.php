@@ -25,6 +25,8 @@ return new class extends Migration
 
             //propery info
             $table->string('name');
+            $table->string('type');
+            $table->integer('reviews')->nullable();
             $table->string('rooms')->nullable();
             $table->string('floor')->nullable();
             $table->string('building_year')->nullable();

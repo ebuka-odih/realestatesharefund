@@ -3,6 +3,7 @@
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\InvestController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +39,13 @@ include 'admin.php';
 Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], function(){
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('deposit', [DepositController::class, 'deposit'])->name('deposit');
+    Route::get('deposit/bank-transfer', [DepositController::class, 'deposit'])->name('deposit');
+    Route::get('deposit/crypto', [DepositController::class, 'crypto'])->name('crypto');
+    Route::get('deposit/payment/{id}', [DepositController::class, 'payment'])->name('payment');
+    Route::post('requestBankinfo', [DepositController::class, 'requestBankinfo'])->name('requestBankinfo');
+    Route::post('cryptoDeposit', [DepositController::class, 'cryptoDeposit'])->name('cryptoDeposit');
+    Route::patch('deposit/processPayment/{id}', [DepositController::class, 'processPayment'])->name('processPayment');
 
+    Route::get('projects', [PropertyController::class, 'projects'])->name('projects');
 });
 

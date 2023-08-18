@@ -13,55 +13,39 @@
             <div class="row">
                 <div class="col-xl-12 col-md-12">
                     <div class="card">
-                       
+
                         <div class="card-body">
                             <!-- Nav tabs -->
                             <div class="custom-tab-1">
                                 <ul class="nav nav-tabs col-lg-6 offset-lg-5">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#home1"><i class="fa fa-money-check me-2"></i> Bank Transfer</a>
+                                        <a class="nav-link active"  href="{{ route('user.deposit') }}"><i class="fa fa-money-check me-2"></i> Bank Transfer</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#profile1"><i class="fa fa-coins me-2"></i> Crypto</a>
+                                        <a class="nav-link"  href="{{ route('user.crypto') }}"><i class="fa fa-coins me-2"></i> Crypto</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane fade active show" id="home1" role="tabpanel">
                                         <div class="pt-4">
-                                            <h4>This is home title</h4>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.
-                                            </p>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.
-                                            </p>
+                                            <h4>Request for bank transfer details</h4>
+                                            <p>Our support will contact you via your email below for our bank transfer details</p>
+                                            @if(session()->has('success'))
+                                                <div class="alert alert-success">
+                                                    {{ session()->get('success') }}
+                                                </div>
+                                            @endif
+                                            <form action="{{ route('user.requestBankinfo') }}" method="POST">
+                                                @csrf
+                                                <input type="text" name="user_email" class="form-control col-lg-6" value="{{ auth()->user()->email }}" readonly>
+                                                <div class="mt-2">
+                                                    <button type="submit" class="btn btn-sm btn-primary">Send</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="profile1">
-                                        <div class="pt-4">
-                                            <h4>This is profile title</h4>
-                                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
-                                            </p>
-                                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="contact1">
-                                        <div class="pt-4">
-                                            <h4>This is contact title</h4>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.
-                                            </p>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="message1">
-                                        <div class="pt-4">
-                                            <h4>This is message title</h4>
-                                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
-                                            </p>
-                                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
-                                            </p>
-                                        </div>
-                                    </div>
+
+
                                 </div>
                             </div>
                         </div>

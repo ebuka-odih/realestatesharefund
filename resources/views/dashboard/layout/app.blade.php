@@ -658,19 +658,13 @@
                         <span class="nav-text">Fund</span>
                     </a>
                 </li>
-                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-bar-chart-2"></i>
-                        <span class="nav-text">Charts</span>
+                <li>
+                    <a class="ai-icon" href="{{ route('user.projects') }}" aria-expanded="false">
+                        <i class="fa fa-boxes"></i>
+                        <span class="nav-text">Projects</span>
                     </a>
-                    <ul aria-expanded="false">
-                        <li><a href="chart-flot.html">Flot</a></li>
-                        <li><a href="chart-morris.html">Morris</a></li>
-                        <li><a href="chart-chartjs.html">Chartjs</a></li>
-                        <li><a href="chart-chartist.html">Chartist</a></li>
-                        <li><a href="chart-sparkline.html">Sparkline</a></li>
-                        <li><a href="chart-peity.html">Peity</a></li>
-                    </ul>
                 </li>
+
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-money"></i>
                         <span class="nav-text">Bootstrap</span>
