@@ -106,7 +106,7 @@
 
                                             <!--Quanatity End-->
                                             <div class="shopping-cart  mb-3 me-3">
-                                                <a class="btn btn-primary" href="javascript:void(0)"><i class="fa fa-shopping-basket me-2"></i>Add
+                                                <a class="btn btn-primary" href="javascript:void(0)"><i class="fa fa-arrow-right me-2"></i>
                                                    Proceed</a>
                                             </div>
                                         </div>

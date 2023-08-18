@@ -1,17 +1,11 @@
 @extends('dashboard.layout.app')
 @section('content')
 
+
     <div class="content-body">
         <!-- row -->
+        @if(auth()->user()->admin == 1)
         <div class="container-fluid">
-            <div class="form-head d-md-flex mb-sm-4 mb-3 align-items-start">
-                <div class="me-auto  d-lg-block">
-                    <h2 class="text-black font-w600">Dashboard</h2>
-                    <p class="mb-0">Welcome to Omah Property Admin</p>
-                </div>
-                <a href="index.html" class="btn btn-primary rounded light me-3">Refresh</a>
-                <a href="javascript:void(0);" class="btn btn-primary rounded"><i class="fas fa-cog me-0"></i></a>
-            </div>
             <div class="row">
                 <div class="col-xl-6 col-xxl-12">
                     <div class="row">
@@ -27,49 +21,30 @@
 												</svg>
 											</span>
                                         <div class="media-body mb-sm-0 mb-3 me-5">
-                                            <h4 class="fs-22 text-white">Total Properties</h4>
+                                            <h4 class="fs-22 text-white">Invested Properties</h4>
                                             <div class="progress mt-3 mb-2" style="height:8px;">
                                                 <div class="progress-bar bg-white progress-animated" style="width: 86%; height:8px;" role="progressbar">
-                                                    <span class="sr-only">86% Complete</span>
+                                                    <span class="sr-only">100% Complete</span>
                                                 </div>
                                             </div>
-                                            <span class="fs-14">431 more to break last month record</span>
+                                            <span class="fs-14">${{ $invested ? : "0.00" }} invested Properties</span>
                                         </div>
-                                        <span class="fs-46 font-w500">4,562</span>
+                                        <span class="fs-46 font-w500">{{ $invested_count ? : "0" }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-12">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
                                         <div class="media-body me-3">
-                                            <h2 class="fs-36 text-black font-w600">2,356</h2>
-                                            <p class="fs-18 mb-0 text-black font-w500">Properties for Sale</p>
-                                            <span class="fs-13">Target 3k/month</span>
+                                            <h2 class="fs-36 text-black font-w600">{{ $total_property }}</h2>
+                                            <p class="fs-18 mb-0 text-black font-w500">Listed Properties</p>
                                         </div>
                                         <div class="d-inline-block position-relative donut-chart-sale">
-                                            <span class="donut1" data-peity='{ "fill": ["rgb(60, 76, 184)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'>5/8</span>
-                                            <small class="text-primary">71%</small>
-                                            <span class="circle bgl-primary"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="media align-items-center">
-                                        <div class="media-body me-3">
-                                            <h2 class="fs-36 text-black font-w600">2,206</h2>
-                                            <p class="fs-18 mb-0 text-black font-w500">Properties for Rent</p>
-                                            <span class="fs-13">Target 3k/month</span>
-                                        </div>
-                                        <div class="d-inline-block position-relative donut-chart-sale">
-                                            <span class="donut1" data-peity='{ "fill": ["rgb(55, 209, 90)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'>7/8</span>
-                                            <small class="text-success">90%</small>
+                                            <span class="donut1" data-peity='{ "fill": ["rgb(60, 76, 184)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'>8/8</span>
+                                            <small class="text-primary">Active</small>
                                             <span class="circle bgl-success"></span>
                                         </div>
                                     </div>
@@ -81,21 +56,13 @@
                 <div class="col-xl-6 col-xxl-12">
                     <div class="card">
                         <div class="card-header border-0 pb-0">
-                            <h3 class="fs-20 text-black">Total Revenue</h3>
-                            <div class="dropdown ms-auto">
-                                <div class="btn-link" data-bs-toggle="dropdown" >
-                                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-                                </div>
-                                <div class="dropdown-menu dropdown-menu-end" >
-                                    <a class="dropdown-item" href="javascript:void(0);">Edit</a>
-                                    <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                </div>
-                            </div>
+                            <h3 class="fs-20 text-black">Balance</h3>
+
                         </div>
                         <div class="card-body pt-2 pb-0">
                             <div class="d-flex flex-wrap align-items-center">
-                                <span class="fs-36 text-black font-w600 me-3">$678,345</span>
-                                <p class="me-sm-auto me-3 mb-sm-0 mb-3">last month $563,443</p>
+                                <span class="fs-36 text-black font-w600 me-3">$@money(auth()->user()->balance)</span>
+                                <p class="me-sm-auto me-3 mb-sm-0 mb-3">Profit $@money(auth()->user()->profit)</p>
                                 <div class="d-flex align-items-center">
                                     <svg class="me-3" width="87" height="47" viewBox="0 0 87 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M29.8043 20.9254C15.2735 14.3873 5.88029 27.282 3 34.5466V46.2406H85V4.58005C70.8925 -0.868404 70.5398 8.66639 60.8409 19.5633C51.1419 30.4602 47.9677 29.0981 29.8043 20.9254Z" fill="url(#paint0_linear)"/>
@@ -107,194 +74,26 @@
                                             </linearGradient>
                                         </defs>
                                     </svg>
-                                    <span class="fs-22 text-success me-2">7%</span>
+                                    <span class="fs-22 text-success me-2"></span>
                                     <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 6L6 2.62268e-07L12 6" fill="#37D159"/>
                                     </svg>
-                                </div>
-                            </div>
-                            <div id="chartTimeline"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-9 col-xxl-8">
-                    <div class="row">
-                        <div class="col-xl-8 col-xxl-12">
-                            <div class="card">
-                                <div class="card-header border-0 pb-0">
-                                    <h3 class="fs-20 text-black">Overview</h3>
-                                    <div class="dropdown ms-auto">
-                                        <div class="btn-link" data-bs-toggle="dropdown" >
-                                            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-                                        </div>
-                                        <div class="dropdown-menu dropdown-menu-end" >
-                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-sm-flex flex-wrap  justify-content-around">
-                                        <div class="d-flex mb-4 align-items-center">
-												<span class="rounded me-3 bg-primary p-3">
-													<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path d="M10.3458 25.7292H1.35412C0.758283 25.7292 0.270782 25.2417 0.270782 24.6458V9.69583C0.270782 9.42499 0.379116 9.09999 0.595783 8.93749L9.58745 0.541659C9.91245 0.270825 10.3458 0.162492 10.725 0.324992C11.1583 0.541659 11.375 0.920825 11.375 1.35416V24.7C11.375 25.2417 10.8875 25.7292 10.3458 25.7292ZM2.38328 23.6167H9.26245V3.79166L2.38328 10.1833V23.6167Z" fill="white"/>
-														<path d="M24.6458 25.7292H10.2916C9.69578 25.7292 9.20828 25.2417 9.20828 24.6458V11.9167C9.20828 11.3208 9.69578 10.8333 10.2916 10.8333H24.6458C25.2416 10.8333 25.7291 11.3208 25.7291 11.9167V24.7C25.7291 25.2417 25.2416 25.7292 24.6458 25.7292ZM11.375 23.6167H23.6166V12.9458H11.375V23.6167Z" fill="white"/>
-														<path d="M19.5541 25.7292H15.3833C14.7874 25.7292 14.2999 25.2417 14.2999 24.6458V18.0375C14.2999 17.4417 14.7874 16.9542 15.3833 16.9542H19.5541C20.1499 16.9542 20.6374 17.4417 20.6374 18.0375V24.6458C20.6374 25.2417 20.1499 25.7292 19.5541 25.7292ZM16.4666 23.6167H18.5249V19.1208H16.4666V23.6167Z" fill="white"/>
-													</svg>
-												</span>
-                                            <div>
-                                                <p class="fs-14 mb-1">Total Sale</p>
-                                                <span class="fs-18 text-black font-w700">2,346 Unit</span>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex mb-4 align-items-center">
-												<span class="rounded me-3 bg-success p-3">
-													<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path d="M10.3458 25.7292H1.35412C0.758283 25.7292 0.270782 25.2417 0.270782 24.6458V9.69583C0.270782 9.42499 0.379116 9.09999 0.595783 8.93749L9.58745 0.541659C9.91245 0.270825 10.3458 0.162492 10.725 0.324992C11.1583 0.541659 11.375 0.920825 11.375 1.35416V24.7C11.375 25.2417 10.8875 25.7292 10.3458 25.7292ZM2.38328 23.6167H9.26245V3.79166L2.38328 10.1833V23.6167Z" fill="white"/>
-														<path d="M24.6458 25.7292H10.2916C9.69578 25.7292 9.20828 25.2417 9.20828 24.6458V11.9167C9.20828 11.3208 9.69578 10.8333 10.2916 10.8333H24.6458C25.2416 10.8333 25.7291 11.3208 25.7291 11.9167V24.7C25.7291 25.2417 25.2416 25.7292 24.6458 25.7292ZM11.375 23.6167H23.6166V12.9458H11.375V23.6167Z" fill="white"/>
-														<path d="M19.5541 25.7292H15.3833C14.7874 25.7292 14.2999 25.2417 14.2999 24.6458V18.0375C14.2999 17.4417 14.7874 16.9542 15.3833 16.9542H19.5541C20.1499 16.9542 20.6374 17.4417 20.6374 18.0375V24.6458C20.6374 25.2417 20.1499 25.7292 19.5541 25.7292ZM16.4666 23.6167H18.5249V19.1208H16.4666V23.6167Z" fill="white"/>
-													</svg>
-												</span>
-                                            <div>
-                                                <p class="fs-14 mb-1">Total Rent</p>
-                                                <span class="fs-18 text-black font-w700">1,252 Unit</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="chartBar"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-xxl-12">
-                            <div class="row">
-                                <div class="col-xl-12 col-xxl-6 col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div id="monocromeChart"></div>
-                                            <div class="d-flex flex-wrap mt-3">
-													<span class="text-black font-w600 me-5 mb-2">
-													<svg class="me-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<rect width="20" height="20" rx="8" fill="#FFB067"/>
-													</svg>Agent</span>
-                                                <span class="text-black font-w600 mb-2">
-													<svg class="me-2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<rect width="20" height="20" rx="8" fill="#B655E4"/>
-													</svg>Customers</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-xxl-6 col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p class="mb-2 d-flex  fs-16 text-black font-w500">Product Viewed
-                                                <span class="pull-right ms-auto text-dark fs-14">561/days</span>
-                                            </p>
-                                            <div class="progress mb-4" style="height:10px">
-                                                <div class="progress-bar bg-primary progress-animated" style="width:75%; height:10px;" role="progressbar">
-                                                    <span class="sr-only">75% Complete</span>
-                                                </div>
-                                            </div>
-                                            <p class="mb-2 d-flex  fs-16 text-black font-w500">Product Listed
-                                                <span class="pull-right ms-auto text-dark fs-14">3,456 Unit</span>
-                                            </p>
-                                            <div class="progress mb-3" style="height:10px">
-                                                <div class="progress-bar bg-primary progress-animated" style="width:90%; height:10px;" role="progressbar">
-                                                    <span class="sr-only">90% Complete</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="col-xl-3 col-xxl-4">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-6">
-                            <div class="card">
-                                <div class="card-header border-0 pb-0">
-                                    <h3 class="fs-20 text-black">Customer Review</h3>
-                                    <div class="dropdown ms-auto">
-                                        <div class="btn-link" data-bs-toggle="dropdown" >
-                                            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-                                        </div>
-                                        <div class="dropdown-menu dropdown-menu-end" >
-                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="card-body pb-0">
-                                    <div class="pb-3 border-bottom mb-3">
-                                        <div class="d-flex mb-3 flex-wrap align-items-end">
-                                            <img class="rounded me-3" src="images/customers/1.jpg" width="58" alt="">
-                                            <div>
-                                                <h6 class="fs-16 text-black font-w600">John Doe</h6>
-                                                <div class="star-icons">
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                </div>
-                                            </div>
-                                            <span class="fs-14 ms-auto">5m ago</span>
-                                        </div>
-                                        <p class="fs-14 mb-0">Friendly service
-                                            Josh, Lunar and everyone at Just Property in Hastings deserved a big Thank You from us for moving us from Jakarta to Medan during the lockdown.
-                                        </p>
-                                    </div>
-                                    <div class="pb-3 border-bottom mb-3">
-                                        <div class="d-flex mb-3 flex-wrap align-items-end">
-                                            <img class="rounded me-3" src="images/customers/2.jpg" width="58" alt="">
-                                            <div>
-                                                <h6 class="fs-16 text-black font-w600">Amelia Tuner</h6>
-                                                <div class="star-icons">
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                </div>
-                                            </div>
-                                            <span class="fs-14 ms-auto">10h ago</span>
-                                        </div>
-                                        <p class="fs-14 mb-0">I viewed a number of properties with Just Property and found them to be professional, efficient, patient, courteous and helpful every time.
-                                        </p>
-                                    </div>
-                                    <div class="pb-3">
-                                        <div class="d-flex mb-3 flex-wrap align-items-end">
-                                            <img class="rounded me-3" src="images/customers/3.jpg" width="58" alt="">
-                                            <div>
-                                                <h6 class="fs-16 text-black font-w600">Jessica Humb</h6>
-                                                <div class="star-icons">
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                    <i class="las la-star"></i>
-                                                </div>
-                                            </div>
-                                            <span class="fs-14 ms-auto">2d ago</span>
-                                        </div>
-                                        <p class="fs-14 mb-0">Dealing with Syamsudin and Bakri was a joy. I got in touch with Just Property after seeing a couple of properties that caught my eye. Both Syamsudin and Bakri strive to deliver a professional service and surpassed my expectations - they were not only helpful but extremely approachable and not at all bumptious...
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-footer border-0 p-0">
-                                    <a href="review.html" class="btn d-block btn-primary rounded">See More Reviews</a>
-                                </div>
+                                <canvas id="widgetChart1" class="max-h80 chartjs-render-monitor" style="display: block; width: 374px; height: 80px;" width="374" height="80"></canvas>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
+        @else
+           <div class="container">
+               <a href="{{ route('admin.dashboard') }}" target="_blank" class="btn btn-primary">Goto Admin</a>
+           </div>
+        @endif
     </div>
 
 @endsection

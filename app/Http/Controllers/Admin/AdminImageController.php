@@ -4,32 +4,33 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Image;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class AdminImageController extends Controller
 {
-    public function storeImage(Request $request, $productId)
+    public function image($id)
     {
-        // Validate the incoming request
+//        $property = Property::findOrFail($id);
+        $property = Property::with('images')->find($id);
+        return view('admin.property.upload-image', compact('property'));
+    }
+    public function storeImage(Request $request)
+    {
+
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the validation rules as needed
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Get the uploaded image
         $image = $request->file('image');
-
-        // Generate a unique image filename
         $imageFileName = time() . '_' . $image->getClientOriginalName();
+        $imagePath = $image->storeAs('public/files', $imageFileName);
 
-        // Store the image in the storage/app/public directory
-        $imagePath = $image->storeAs('public', $imageFileName);
-
-        // Create a new image record in the database
         Image::create([
-            'product_id' => $productId,
+            'properties_id' => $request->properties_id,
             'image_path' => $imagePath,
         ]);
 
-        return response()->json(['message' => 'Image uploaded successfully']);
+        return redirect()->back()->with('success', 'Image uploaded successfully');
     }
 }

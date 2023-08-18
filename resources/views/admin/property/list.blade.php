@@ -106,6 +106,7 @@
                                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs" style="">
                                                     <ul class="link-list-plain">
                                                         <li><a href="{{ route('admin.property.edit', $item->id) }}" class="text-primary">Edit</a></li>
+                                                        <li><a href="{{ route('admin.image', $item->id) }}" class="text-primary">Upload Image</a></li>
                                                         <li><a href="{{ route('admin.property.show', $item->id) }}" class="text-primary">View</a></li>
                                                         <li class="m-2">
                                                             <form method="POST" action="{!! route('admin.property.destroy', $item->id) !!}" accept-charset="UTF-8">
@@ -173,7 +174,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="form-group">
                                     <label class="form-label mt-2" for="full-name">Rooms</label>
                                     <div class="form-control-wrap">
@@ -181,11 +182,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="form-group">
                                     <label class="form-label mt-2" for="full-name">Floor</label>
                                     <div class="form-control-wrap">
                                         <input type="text" class="form-control" name="floor" value="{{ old('floor') }}" id="full-name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label class="form-label mt-2" for="full-name">Type</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" name="type" value="{{ old('type') }}" id="full-name">
                                     </div>
                                 </div>
                             </div>
@@ -212,6 +221,24 @@
                                     <label class="form-label mt-2" for="full-name">Location</label>
                                     <div class="form-control-wrap">
                                         <input type="text" class="form-control" name="building_location" id="full-name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-label mt-2" for="full-name">Money Invested</label>
+                                    <div class="form-control-wrap">
+                                        <input type="number" class="form-control" name="invested" value="{{ old('invested') }}" id="full-name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-label mt-2" for="full-name">Reviews</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" name="reviews" value="{{ old('reviews') }}" id="full-name">
                                     </div>
                                 </div>
                             </div>
@@ -248,6 +275,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row mb-2">
                             <div class="col-6">
                                 <div class="form-group">
@@ -270,23 +298,13 @@
                             </div>
                         </div>
 
-                        <div class="col-12 mb-2">
-                            <div class="form-group">
-                                <label class="form-label mt-2" for="full-name">Images</label>
-                                <div class="form-control-wrap">
-                                    <input type="file" class="form-control" name="target_duration" value="{{ old('target_duration') }}" id="full-name">
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-lg btn-primary">Save Informations</button>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer bg-light">
-                    <span class="sub-text">Modal Footer Text</span>
-                </div>
+
             </div>
         </div>
     </div>

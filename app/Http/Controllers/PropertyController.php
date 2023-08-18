@@ -18,4 +18,9 @@ class PropertyController extends Controller
         $project = Property::findOrFail($id);
         return view('dashboard.project.detail', compact('project'));
     }
+    public function processInvestment(Request $request)
+    {
+        $id = $request->project_id;
+
+    }
 }

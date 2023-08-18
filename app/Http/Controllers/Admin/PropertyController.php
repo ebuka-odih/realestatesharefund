@@ -25,7 +25,7 @@ class PropertyController extends Controller
    {
        $data = $this->getData($request);
        $data = Property::create($data);
-       return redirect()->route('admin.image.store', $data->id)->with('success', "Created Successfully");
+       return redirect()->route('admin.image', $data->id)->with('success', "Created Successfully");
    }
 
    public function show($id)
@@ -58,6 +58,7 @@ class PropertyController extends Controller
        $rules = [
            'price' => 'required',
            'name' => 'required',
+           'type' => 'nullable',
            'min_price' => 'required',
            'return_rate' => 'nullable',
            'capital_back' => 'nullable',
@@ -68,6 +69,8 @@ class PropertyController extends Controller
            'square_meter' => 'nullable',
            'building_location' => 'nullable',
            'description' => 'nullable',
+           'reviews' => 'nullable',
+           'invested' => 'nullable',
        ];
        return $request->validate($rules);
    }

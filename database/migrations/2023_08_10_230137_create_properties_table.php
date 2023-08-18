@@ -22,10 +22,11 @@ return new class extends Migration
             $table->string('return_for')->nullable();
             $table->string('capital_back')->nullable();
             $table->string('target_duration')->nullable();
+            $table->decimal('invested', 11, 2)->nullable();
 
             //propery info
             $table->string('name');
-            $table->string('type');
+            $table->string('type')->nullable();
             $table->integer('reviews')->nullable();
             $table->string('rooms')->nullable();
             $table->string('floor')->nullable();
