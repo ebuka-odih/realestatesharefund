@@ -24,6 +24,7 @@
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
     <link href="{{ asset('dash/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         a .DZ-theme-btn {
             align-items: center;
@@ -59,7 +60,7 @@
     ***********************************-->
     <div class="nav-header">
         <a href="{{ route('index') }}" class="brand-logo">
-           <h3 style="font-weight: bolder;">{{ env('APP_NAME') }}</h3>
+            <h2 style="font-weight: bolder; color: black" >RESF</h2>
         </a>
 
         <div class="nav-control">
@@ -186,14 +187,6 @@
     </div>
     <!--**********************************
         Footer end
-    ***********************************-->
-
-    <!--**********************************
-       Support ticket button start
-    ***********************************-->
-
-    <!--**********************************
-       Support ticket button end
     ***********************************-->
 
 

@@ -62,10 +62,8 @@
                     <div class="col-xl-4 col-md-6">
                     <div class="invest-card">
                         <div class="invest-card-thumb">
-                            <a href="https://crowdsq.com/investment/plan/details/7" class="plan-link"></a>
+                            <a href="" class="plan-link"></a>
                             <img src="https://crowdsq.com/asset/images/property/648324d2ed7e61686316242.jpg" alt="image">
-
-
                             <button type="button" data-href="https://crowdsq.com/bookmark/7"
                                     data-bookmark=""
                                     class="invest-bookmark-btn ">
@@ -129,7 +127,7 @@
                         </div>
                         <div class="invest-card-footer">
                             <div>
-                                <a href="https://crowdsq.com/investment/plan/details/7"
+                                <a href="{{ route('user.projects') }}"
                                    class="cmn-btn2 w-100 btn-sm">Invest Now</a>
                             </div>
                         </div>
@@ -222,7 +220,8 @@
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <form action="https://crowdsq.com/investmentplan/invest" method="post">
-                <input type="hidden" name="_token" value="0tSYF3KNOd6EE5V8qUlCumQqUb7R55ISS0lEghoo">            <div class="modal-content">
+                <input type="hidden" name="_token" value="0tSYF3KNOd6EE5V8qUlCumQqUb7R55ISS0lEghoo">
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Invest Now</h5>
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
@@ -298,7 +297,7 @@
 
     <section class="choose-section s-pt-120 s-pb-120 has-bg-img section-bg">
         <div class="line-obj">
-            <img src="https://crowdsq.com/asset/images/why_choose_us/63207e773eb8a1663073911.png" alt="line">
+            <img src="{{ asset('img/63207e773eb8a1663073911.png') }}" alt="line">
         </div>
         <div class="container">
             <div class="row justify-content-center">
@@ -348,9 +347,10 @@
                 </div>
             </div>
         </div>
-    </section>                    <section class="work-section s-pt-120 s-pb-120 section-bg">
+    </section>
+    <section class="work-section s-pt-120 s-pb-120 section-bg">
         <div class="line-obj">
-            <img src="https://crowdsq.com/asset/images/howitwork/63dd07fe0ca651675429886.png" alt="image">
+            <img src="{{ asset('img/63dd07fe0ca651675429886.png') }}" alt="image">
         </div>
         <div class="container">
 
@@ -365,7 +365,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="work-box">
                         <div class="icon">
-                            <img src="https://crowdsq.com/asset/images/howitwork/632074cf6a3641663071439.png" alt="image">
+                            <img src="{{ asset('img/632074cf6a3641663071439.png') }}" alt="image">
                         </div>
                         <div class="content">
                             <h4 class="title">Create An Account</h4>
@@ -376,7 +376,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="work-box">
                         <div class="icon">
-                            <img src="https://crowdsq.com/asset/images/howitwork/632074d55e1b71663071445.png" alt="image">
+                            <img src="{{ asset('img/632074d55e1b71663071445.png') }}" alt="image">
                         </div>
                         <div class="content">
                             <h4 class="title">Invest In A Property</h4>
@@ -387,7 +387,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="work-box">
                         <div class="icon">
-                            <img src="https://crowdsq.com/asset/images/howitwork/632074dac9af71663071450.png" alt="image">
+                            <img src="{{ asset('img/632074dac9af71663071450.png') }}" alt="image">
                         </div>
                         <div class="content">
                             <h4 class="title">Receive Rental Income</h4>
@@ -398,7 +398,7 @@
                 <div class="col-xl-3 col-md-6">
                     <div class="work-box">
                         <div class="icon">
-                            <img src="https://crowdsq.com/asset/images/howitwork/632074e1a05fa1663071457.png" alt="image">
+                            <img src="{{ asset('img/632074e1a05fa1663071457.png') }}" alt="image">
                         </div>
                         <div class="content">
                             <h4 class="title">Exit Your Investment</h4>
@@ -433,7 +433,7 @@
                                 </div>
                                 <div class="client">
                                     <div class="thumb">
-                                        <img src="https://crowdsq.com/asset/images/testimonial/61fd4de828e951643990504.jpg"
+                                        <img src="{{ asset('img/61fd4de828e951643990504.jpg') }}"
                                              class="testimonial-img" alt="">
                                     </div>
                                     <div class="client-content">
@@ -453,7 +453,7 @@
                                 </div>
                                 <div class="client">
                                     <div class="thumb">
-                                        <img src="https://crowdsq.com/asset/images/testimonial/61fd4e4f859dd1643990607.jpg"
+                                        <img src="{{ asset('img/61fd4e4f859dd1643990607.jpg')}}"
                                              class="testimonial-img" alt="">
                                     </div>
                                     <div class="client-content">
@@ -473,7 +473,7 @@
                                 </div>
                                 <div class="client">
                                     <div class="thumb">
-                                        <img src="https://crowdsq.com/asset/images/testimonial/6253da0b3e71e1649662475.jpg"
+                                        <img src="{{ asset('img/6253da0b3e71e1649662475.jpg') }}"
                                              class="testimonial-img" alt="">
                                     </div>
                                     <div class="client-content">

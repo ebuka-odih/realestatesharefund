@@ -35,7 +35,8 @@
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font-awsome.min.css') }}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://crowdsq.com/asset/frontend/css/iziToast.min.css">
+    <link rel="stylesheet" href="{{ asset('css/iziToast.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -190,16 +191,16 @@
     <i class="fas fa-arrow-up text-light"></i>
 </button>
 
-<script src="https://crowdsq.com/asset/frontend/js/jquery.min.js"></script>
-<script src="https://crowdsq.com/asset/frontend/vendor/purecounter/purecounter.js"></script>
-<script src="https://crowdsq.com/asset/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="https://crowdsq.com/asset/frontend/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="https://crowdsq.com/asset/frontend/js/slick.min.js"></script>
-<script src="https://crowdsq.com/asset/frontend/vendor/php-email-form/validate.js"></script>
-<script src="https://crowdsq.com/asset/frontend/js/selectric.min.js"></script>
-<script src="https://crowdsq.com/asset/frontend/js/main.js"></script>
-<script src="https://crowdsq.com/asset/frontend/js/iziToast.min.js"></script>
-<script src="https://crowdsq.com/asset/frontend/js/jquery.uploadPreview.min.js"></script>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/purecounter.js')}}"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/glightbox.min.js') }}"></script>
+<script src="{{ asset('js/slick.min.js') }}"></script>
+<script src="{{ asset('js/validate.js') }}"></script>
+<script src="{{ asset('js/selectric.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/iziToast.min.js') }}"></script>
+<script src="{{ asset('js/jquery.uploadPreview.min.js') }}"></script>
 
 <script>
     $(function() {

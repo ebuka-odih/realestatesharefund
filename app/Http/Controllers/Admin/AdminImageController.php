@@ -11,7 +11,6 @@ class AdminImageController extends Controller
 {
     public function image($id)
     {
-//        $property = Property::findOrFail($id);
         $property = Property::with('images')->find($id);
         return view('admin.property.upload-image', compact('property'));
     }
