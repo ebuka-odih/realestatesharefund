@@ -2,7 +2,7 @@
 @section('content')
 
 <main id="main" class="main-img">
-    <section class="banner-section has-bg-img" style="background-image: url(https://crowdsq.com/asset/images/banner/631f20b2e94941662984370.jpg);">
+    <section class="banner-section has-bg-img" style="background-image: url(img/banner.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 col-xl-7 col-lg-8 text-md-start text-center">

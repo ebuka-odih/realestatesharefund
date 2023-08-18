@@ -19,27 +19,29 @@
         CrowdSquare -  Invest in Real Estate Online
     </title>
     .
-    <link rel="stylesheet" href="https://crowdsq.com/asset/frontend/css/cookie.css">
+
+    <link rel="stylesheet" href="{{ asset('css/cookie.css') }}">
+
+
     <link href="https://crowdsq.com/asset/frontend/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="https://crowdsq.com/asset/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://crowdsq.com/asset/frontend/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://crowdsq.com/asset/frontend/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://crowdsq.com/asset/frontend/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="https://crowdsq.com/asset/frontend/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="https://crowdsq.com/asset/frontend/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://crowdsq.com/asset/frontend/css/selectric.css">
-    <link rel="stylesheet" href="https://crowdsq.com/asset/frontend/css/animate.min.css">
-    <link rel="stylesheet" href="https://crowdsq.com/asset/frontend/css/slick.css">
-    <link rel="stylesheet" href="https://crowdsq.com/asset/frontend/css/font-awsome.min.css">
-    <link href="https://crowdsq.com/asset/frontend/css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/selectric.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awsome.min.css') }}">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://crowdsq.com/asset/frontend/css/iziToast.min.css">
-    <link rel="stylesheet"
-          href="https://crowdsq.com/asset/frontend/css/color.php?primary_color=0059FF">
+
 </head>
 
 <body>
 
-<h1> CrowdSquare - Invest in real estate online </h1>
+<h1> {{ env('APP_NAME') }} - Invest in real estate online </h1>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B8D2BS69L8"></script>
 <script>
@@ -56,15 +58,17 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-        <div class="logo me-auto me-lg-0"><a href="{{ route('index') }}">
-                <h3 style="font-weight: bolder" class="text-primary">{{ env('APP_NAME') }}</h3>
-
+        <div class="logo me-auto me-lg-0">
+            <a href="{{ route('index') }}">
+                <h3 style="font-weight: bolder; color: black" class="text-primary">{{ env('APP_NAME') }}</h3>
             </a>
         </div>
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li class="active"><a class="nav-link"
-                                      href="{{ route('index') }}">Home</a></li>
+                <li class="active">
+                    <a class="nav-link"
+                                      href="{{ route('index') }}">Home</a>
+                </li>
                 <li><a class="nav-link" href="{{ route('properties') }}">Properties</a>
                 </li>
 
