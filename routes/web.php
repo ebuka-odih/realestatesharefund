@@ -47,5 +47,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::patch('deposit/processPayment/{id}', [DepositController::class, 'processPayment'])->name('processPayment');
 
     Route::get('projects', [PropertyController::class, 'projects'])->name('projects');
+    Route::get('projectDetail/{id}', [PropertyController::class, 'projectDetail'])->name('projectDetail');
 });
 

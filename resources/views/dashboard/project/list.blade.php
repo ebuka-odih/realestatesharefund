@@ -21,8 +21,9 @@
                                 </div>
                                 <div class="col-md-7 col-xxl-12">
                                     <div class="new-arrival-content position-relative">
-                                        <h4><a href="ecom-product-detail.html">{{ $item->name }}</a></h4>
+                                        <h4><a href="{{ route('user.projectDetail', $item->id) }}">{{ $item->name }}</a></h4>
                                         <div class="comment-review star-rating">
+                                            @if($item->reviews > 3)
                                             <ul>
                                                 <li><i class="fa fa-star"></i></li>
                                                 <li><i class="fa fa-star"></i></li>
@@ -30,11 +31,22 @@
                                                 <li><i class="fa fa-star-half-empty"></i></li>
                                                 <li><i class="fa fa-star-half-empty"></i></li>
                                             </ul>
-                                            <span class="review-text">({{ $item->reviews }}) </span>
-                                            <p class="price">$@money($item->price)</p>
+                                            @else
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star-half"></i></li>
+                                                    <li><i class="fa fa-star-half"></i></li>
+                                                </ul>
+                                            @endif
+                                            <span class="review-text">({{ $item->reviews ? : "0" }} reviews) </span>
+                                            <p class="price">$@money($item->price)</p><br>
+                                            <p class="badge bg-info text-white mt-2">Min: $@money($item->min_price)</p>
                                         </div>
                                         <p>Type: <span class="item"> {{ $item->type }} </span></p>
                                         <p><i class="fa fa-location-arrow"></i> Location: <span class="item">{{ $item->building_location }}</span></p>
+
                                         <p class="text-content">
                                             {{ $item->description  }}
                                         </p>
