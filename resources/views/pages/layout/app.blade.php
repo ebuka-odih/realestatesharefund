@@ -102,12 +102,12 @@
                 <div class="col-lg-4">
                     <div class="footer-box">
                         <div class="logo">
-                            <a href="https://crowdsq.com">
+                            <a href="{{ route('index') }}">
                                 <span>
 
-                                    <img class="img-fluid rounded sm-device-img text-align"
-                                         src="https://crowdsq.com/asset/images/logo/secondary_logo.png" width="100%"
-                                         alt="pp">
+{{--                                    <img class="img-fluid rounded sm-device-img text-align"--}}
+{{--                                         src="https://crowdsq.com/asset/images/logo/secondary_logo.png" width="100%"--}}
+{{--                                         alt="pp">--}}
 
 
                                 </span>
@@ -118,13 +118,10 @@
                                 <span class="caption">Address</span>
                                 <span class="description">25 Krum Kyulyavkov, Sofia, Bulgaria</span>
                             </li>
-                            <li>
-                                <span class="caption">Phone</span>
-                                <span class="description">+359 896 84 72 50</span>
-                            </li>
+
                             <li>
                                 <span class="caption">Email</span>
-                                <span class="description">Info@crowdsq.com</span>
+                                <span class="description">Info@realestatesharefund.com</span>
                             </li>
                         </ul>
                         <div class="footer-payment">
@@ -137,9 +134,9 @@
                     <div class="footer-box">
                         <h4 class="title">Useful Links</h4>
                         <ul class="footer-link-list">
-                            <li> <a href="https://crowdsq.com">Home</a></li>
-                            <li><a href="https://crowdsq.com/about">About</a></li>
-                            <li><a href="https://crowdsq.com/contact">Contact</a></li>
+                            <li> <a href="{{ route('index') }}">Home</a></li>
+                            <li><a href="{{ route('about') }}">About</a></li>
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -148,17 +145,15 @@
                         <h4 class="title">Our Services</h4>
                         <ul class="footer-link-list">
                             <li><a
-                                    href="https://crowdsq.com/service/commercial-real-estate">Commercial Real Estate</a>
+                                    href="{{ route('login') }}">Commercial Real Estate</a>
                             </li>
                             <li><a
-                                    href="https://crowdsq.com/service/residential-real-estate">Residential Real Estate</a>
+                                    href="{{ route('login') }}">Residential Real Estate</a>
                             </li>
                             <li><a
-                                    href="https://crowdsq.com/service/guide">Step By Step Guide</a>
+                                    href="{{ route('login') }}">Step By Step Guide</a>
                             </li>
-                            <li><a
-                                    href="https://crowdsq.com/service/referral-program">Referral Program</a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -172,25 +167,6 @@
                             <button type="submit">Subscribe</button>
                         </form>
 
-                        <h6 class="text-white mt-4 mb-3">Social Links:</h6>
-                        <ul class="social-links">
-                            <li>
-                                <a href="Https://www.facebook.com/crowdsq" target="_blank" class="twitter"><i
-                                        class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="Https://www.linkedin.com/company/crowdsq" target="_blank" class="twitter"><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </li>
-                            <li>
-                                <a href="Https://twitter.com/crowd_square" target="_blank" class="twitter"><i
-                                        class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="Https://www.youtube.com/@crowdsq" target="_blank" class="twitter"><i
-                                        class="fab fa-youtube"></i></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -199,7 +175,7 @@
     <div class="footer-bottom">
         <div class="container">
             <p class="text-center mb-0 text-white">
-                Copyright © 2022 CrowdSquare. All Rights Reserved.
+                Copyright © {{ Date('Y')}} {{ env('APP_NAME') }}. All Rights Reserved.
             </p>
         </div>
     </div>
