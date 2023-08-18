@@ -60,7 +60,7 @@
 
         <div class="logo me-auto me-lg-0">
             <a href="{{ route('index') }}">
-                <h3 style="font-weight: bolder; color: black" >RESF</h3>
+                <h2 style="font-weight: bolder; color: black" >RESF</h2>
             </a>
         </div>
         <nav id="navbar" class="navbar order-last order-lg-0">
