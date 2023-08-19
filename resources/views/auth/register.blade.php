@@ -39,7 +39,7 @@
                                     </a>
                                 </div>
                                 <h4 class="text-center mb-4">Sign Up</h4>
-                                <form action="{{ route('register') }}">
+                                <form action="{{ route('register') }}" method="POST">
                                     @csrf
                                     @if ($errors->any())
                                         <div class="alert alert-danger">

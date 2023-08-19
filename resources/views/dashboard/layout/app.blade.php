@@ -147,9 +147,14 @@
                     </a>
                 </li>
 
-
-
-                <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
+                <li>
+                    <a href="#" class="ai-icon" aria-expanded="false">
+                        <i class="fa fa-arrow-circle-up"></i>
+                        <span class="nav-text">Withdraw</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="ai-icon" aria-expanded="false">
                         <i class="fa fa-history"></i>
                         <span class="nav-text">Transactions</span>
                     </a>
