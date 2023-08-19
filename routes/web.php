@@ -4,6 +4,7 @@ use App\Http\Controllers\DepositController;
 use App\Http\Controllers\InvestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WithdrawController;
 use Illuminate\Support\Facades\Route;
@@ -52,5 +53,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     Route::get('withdraw', [WithdrawController::class, 'withdraw'])->name('withdraw');
     Route::post('processWithdraw', [WithdrawController::class, 'processWithdraw'])->name('processWithdraw');
+
+    Route::get('history/deposit', [TransactionsController::class, 'depositHistory'])->name('depositHistory');
 });
 

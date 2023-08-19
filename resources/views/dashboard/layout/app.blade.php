@@ -158,7 +158,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="ai-icon" aria-expanded="false">
+                    <a href="{{ route('user.depositHistory') }}" class="ai-icon" aria-expanded="false">
                         <i class="fa fa-history"></i>
                         <span class="nav-text">Transactions</span>
                     </a>
