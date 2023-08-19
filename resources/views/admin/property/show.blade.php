@@ -23,47 +23,33 @@
                                     <div class="col-lg-6">
                                         <div class="product-gallery me-xl-1 me-xxl-5">
                                             <div class="slider-init slick-initialized slick-slider" id="sliderFor" data-slick="{&quot;arrows&quot;: false, &quot;fade&quot;: true, &quot;asNavFor&quot;:&quot;#sliderNav&quot;, &quot;slidesToShow&quot;: 1, &quot;slidesToScroll&quot;: 1}">
-                                                <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 3140px;"><div class="slider-item rounded slick-slide" data-slick-index="0" aria-hidden="true" style="width: 628px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms ease 0s;" tabindex="-1">
-                                                            <img src="./images/product/lg-a.jpg" class="w-100" alt="">
-                                                        </div><div class="slider-item rounded slick-slide" data-slick-index="1" aria-hidden="true" style="width: 628px; position: relative; left: -628px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms ease 0s;" tabindex="-1">
-                                                            <img src="./images/product/lg-g.jpg" class="w-100" alt="">
-                                                        </div><div class="slider-item rounded slick-slide" data-slick-index="2" aria-hidden="true" style="width: 628px; position: relative; left: -1256px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1">
-                                                            <img src="./images/product/lg-d.jpg" class="w-100" alt="">
-                                                        </div><div class="slider-item rounded slick-slide slick-current slick-active" data-slick-index="3" aria-hidden="false" style="width: 628px; position: relative; left: -1884px; top: 0px; z-index: 999; opacity: 1;" tabindex="0">
-                                                            <img src="./images/product/lg-h.jpg" class="w-100" alt="">
-                                                        </div><div class="slider-item rounded slick-slide" data-slick-index="4" aria-hidden="true" style="width: 628px; position: relative; left: -2512px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1">
-                                                            <img src="./images/product/lg-e.jpg" class="w-100" alt="">
-                                                        </div></div></div>
-
-
-
+                                                <div class="slick-list draggable">
+                                                    <div class="slick-track" style="opacity: 1; width: 3140px;">
+                                                        @foreach ($property->images as $image)
+                                                        <div class="slider-item rounded slick-slide" data-slick-index="{{ $image->id }}" aria-hidden="true" style="width: 628px; position: relative; left: -2512px; top: 0px; z-index: 998; opacity: 0;" tabindex="0">
+                                                            <img src="{{ asset($image->image_path) }}" class="w-100" alt="">
+                                                        </div>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
 
                                             </div><!-- .slider-init -->
                                             <div class="slider-init slider-nav slick-initialized slick-slider" id="sliderNav" data-slick="{&quot;arrows&quot;: false, &quot;slidesToShow&quot;: 5, &quot;slidesToScroll&quot;: 1, &quot;asNavFor&quot;:&quot;#sliderFor&quot;, &quot;centerMode&quot;:true, &quot;focusOnSelect&quot;: true,
                                 &quot;responsive&quot;:[ {&quot;breakpoint&quot;: 1539,&quot;settings&quot;:{&quot;slidesToShow&quot;: 4}}, {&quot;breakpoint&quot;: 768,&quot;settings&quot;:{&quot;slidesToShow&quot;: 3}}, {&quot;breakpoint&quot;: 420,&quot;settings&quot;:{&quot;slidesToShow&quot;: 2}} ]
                             }">
-                                                <div class="slick-list draggable" style="padding: 0px 50px;"><div class="slick-track" style="opacity: 1; width: 470px; transform: translate3d(-376px, 0px, 0px);"><div class="slider-item slick-slide" data-slick-index="0" aria-hidden="true" style="width: 94px;" tabindex="-1">
-                                                            <div class="thumb">
-                                                                <img src="{{ asset('assets/images/product/lg-a.jpg') }}" alt="">
-                                                            </div>
-                                                        </div><div class="slider-item slick-slide" data-slick-index="1" aria-hidden="true" style="width: 94px;" tabindex="-1">
-                                                            <div class="thumb">
-                                                                <img src="./images/product/lg-g.jpg" alt="">
-                                                            </div>
-                                                        </div><div class="slider-item slick-slide" data-slick-index="2" aria-hidden="true" style="width: 94px;" tabindex="-1">
-                                                            <div class="thumb">
-                                                                <img src="./images/product/lg-d.jpg" alt="">
-                                                            </div>
-                                                        </div><div class="slider-item slick-slide" data-slick-index="3" aria-hidden="true" style="width: 94px;" tabindex="-1">
-                                                            <div class="thumb">
-                                                                <img src="./images/product/lg-h.jpg" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="slider-item slick-slide slick-current slick-center" data-slick-index="4" aria-hidden="true" style="width: 94px;" tabindex="0">
-                                                            <div class="thumb">
-                                                                <img src="./images/product/lg-e.jpg" alt="">
-                                                            </div>
-                                                        </div>
+                                                <div class="slick-list draggable" style="padding: 0px 50px;">
+                                                    <div class="slick-track" style="opacity: 1; width: 470px; transform: translate3d(-376px, 0px, 0px);">
+
+
+                                                            @foreach ($property->images as $image)
+                                                                <div class="slider-item slick-slide slick-current slick-center" data-slick-index="{{ $image->id }}" aria-hidden="true" style="width: 94px;" tabindex="0">
+                                                                    <div class="thumb">
+                                                                        <img src="{{ asset($image->image_path) }}" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+
+
                                                     </div>
                                                 </div>
 

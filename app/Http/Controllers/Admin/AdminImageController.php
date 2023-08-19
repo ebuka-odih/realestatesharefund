@@ -20,10 +20,7 @@ class AdminImageController extends Controller
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
-        $image = $request->file('image');
-        $imageFileName = time() . '_' . $image->getClientOriginalName();
-        $imagePath = $image->storeAs('public/files', $imageFileName);
+        $imagePath = $this->uploadImage($request->file('image'), 'files');
 
         Image::create([
             'properties_id' => $request->properties_id,

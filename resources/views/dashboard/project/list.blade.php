@@ -14,9 +14,15 @@
                             <div class="row m-b-30">
                                 <div class="col-md-5 col-xxl-12">
                                     <div class="new-arrival-product mb-4 mb-xxl-4 mb-md-0">
-                                        <div class="new-arrivals-img-contnent">
-                                            <img class="img-fluid" src="images/product/2.jpg" alt="">
-                                        </div>
+
+                                        @foreach ($item->images as $image)
+                                            @if($loop->first)
+                                                <div class="new-arrivals-img-contnent">
+                                                    <img class="img-fluid" src="{{ asset($image->image_path) }}" alt="">
+                                                </div>
+
+                                            @endif
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="col-md-7 col-xxl-12">

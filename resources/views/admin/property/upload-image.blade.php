@@ -5,6 +5,18 @@
         <div class="container-fluid">
             <div class="nk-content-inner">
                 <div class="nk-content-body">
+                    <div class="nk-block-head nk-block-head-sm">
+                        <div class="nk-block-between g-3">
+                            <div class="nk-block-head-content">
+                                <h3 class="nk-block-title page-title">Upload Image</h3>
+                            </div>
+                            <div class="nk-block-head-content">
+                                <a href="{{ route('admin.property.index') }}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
+                                <a href="{{ route('admin.property.index') }}" class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em class="icon ni ni-arrow-left"></em></a>
+                            </div>
+                        </div>
+                    </div><!-- .nk-block-head -->
+
                     <div class="nk-block">
                         <div class="nk-block nk-block-lg">
                             <div class="container m-2">
@@ -92,7 +104,7 @@
 
                                       @if ($property->images->count() > 0)
                                           @foreach ($property->images as $image)
-                                              <img src="{{ asset('storage/'.$image->image_path) }}" alt="Product Image">
+                                              <img height="150" width="150" src="{{ asset($image->image_path) }}" alt="Product Image">
                                           @endforeach
                                       @else
                                           <p>No images available for this product.</p>

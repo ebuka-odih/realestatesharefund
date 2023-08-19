@@ -63,14 +63,12 @@
                     <div class="invest-card">
                         <div class="invest-card-thumb">
                             <a href="" class="plan-link"></a>
-                            <img src="https://crowdsq.com/asset/images/property/648324d2ed7e61686316242.jpg" alt="image">
-                            <button type="button" data-href="https://crowdsq.com/bookmark/7"
-                                    data-bookmark=""
-                                    class="invest-bookmark-btn ">
 
-                                <i class="far fa-heart first-bookmark"></i>
-                                <i class="fas fa-heart second-bookmark"></i>
-                            </button>
+                            @foreach ($item->images as $image)
+                                @if($loop->first)
+                                <img  src="{{ asset($image->image_path) }}" alt="Property Image">
+                                @endif
+                            @endforeach
 
                             <div class="thumb-bottom">
                                 <h4 class="title"><a href="https://crowdsq.com/investment/plan/details/7">
@@ -83,7 +81,7 @@
                                     <i class="far fa-star"></i>
                                     <i class="far fa-star"></i>
                                     <i class="far fa-star"></i>
-                                    <span class="text-white">(0 Reviews)</span>
+                                    <span class="text-white">({{ $item->reviews }} Reviews)</span>
                                 </div>
                             </div>
                         </div>

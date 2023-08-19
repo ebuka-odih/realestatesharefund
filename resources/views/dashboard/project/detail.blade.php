@@ -12,36 +12,41 @@
                             <div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane fade active show" id="first">
-                                        <img class="img-fluid" src="images/product/1.jpg" alt="">
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="second">
-                                        <img class="img-fluid" src="images/product/2.jpg" alt="">
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="third">
-                                        <img class="img-fluid" src="images/product/3.jpg" alt="">
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="for">
-                                        <img class="img-fluid" src="images/product/4.jpg" alt="">
-                                    </div>
+
+                                    @if ($project->images->count() > 0)
+                                        @foreach ($project->images as $image)
+                                            @if($loop->first)
+                                                <div role="tabpanel" class="tab-pane fade active show" id="{{ $image->id }}">
+                                                    <img class="img-fluid" src="{{ asset($image->image_path) }}" alt="">
+                                                </div>
+                                            @else
+                                                <div role="tabpanel" class="tab-pane fade" id="{{ $image->id }}">
+                                                    <img class="img-fluid" src="{{ asset($image->image_path) }}" alt="">
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        <p>No images available for this property.</p>
+                                    @endif
+
                                 </div>
                                 <div class="tab-slide-content new-arrival-product mb-4 mb-xl-0">
                                     <!-- Nav tabs -->
                                     <ul class="nav slide-item-list mt-3" role="tablist">
-                                        <li role="presentation" class="show">
-                                            <a href="#first" role="tab" data-bs-toggle="tab" class="active" aria-selected="true">
-                                                <img class="img-fluid" src="images/tab/1.jpg" alt="" width="50">
-                                            </a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#second" role="tab" data-bs-toggle="tab" class="" aria-selected="false"><img class="img-fluid" src="images/tab/2.jpg" alt="" width="50"></a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#third" role="tab" data-bs-toggle="tab" class="" aria-selected="false"><img class="img-fluid" src="images/tab/3.jpg" alt="" width="50"></a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#for" role="tab" data-bs-toggle="tab" class="" aria-selected="false"><img class="img-fluid" src="images/tab/4.jpg" alt="" width="50"></a>
-                                        </li>
+
+                                        @foreach ($project->images as $image)
+                                            @if($loop->first)
+                                            <li role="presentation" class="show">
+                                                <a href="#{{ $image->id }}" role="tab" data-bs-toggle="tab"  aria-selected="true">
+                                                    <img class="img-fluid" src="{{ asset($image->image_path) }}" alt="" width="50"></a>
+                                            </li>
+                                            @else
+                                                <li role="presentation" >
+                                                    <a href="#{{ $image->id }}" role="tab" data-bs-toggle="tab" class="" >
+                                                        <img class="img-fluid" src="{{ asset($image->image_path) }}" alt="" width="50"></a>
+                                                </li>
+                                            @endif
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
