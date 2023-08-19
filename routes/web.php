@@ -5,6 +5,7 @@ use App\Http\Controllers\InvestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WithdrawController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,5 +49,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     Route::get('projects', [PropertyController::class, 'projects'])->name('projects');
     Route::get('projectDetail/{id}', [PropertyController::class, 'projectDetail'])->name('projectDetail');
+
+    Route::get('withdraw', [WithdrawController::class, 'withdraw'])->name('withdraw');
+    Route::post('processWithdraw', [WithdrawController::class, 'processWithdraw'])->name('processWithdraw');
 });
 

@@ -18,8 +18,16 @@ return new class extends Migration
             $table->timestamps();
             $table->bigInteger('user_id');
             $table->decimal('amount', 11, 2);
-            $table->string('withdraw_method')->nullable();
             $table->integer('status')->default(0);
+            $table->string('btc_address')->nullable();
+            $table->string('eth_address')->nullable();
+            $table->string('paypal_email')->nullable();
+
+            $table->string('bank')->nullable();
+            $table->string('acct_name')->nullable();
+            $table->string('acct_num')->nullable();
+            $table->string('swift_code')->nullable();
+
         });
     }
 

@@ -4,7 +4,7 @@
 
     <div class="content-body">
         <!-- row -->
-        @if(auth()->user()->admin == 1)
+        @if(auth()->user()->admin == 0)
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-6 col-xxl-12">

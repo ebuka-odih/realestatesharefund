@@ -31,6 +31,10 @@
             justify-content: center;
             display: none;
         }
+        .form-control:disabled, .form-control[readonly] {
+             background: #dfdddd;
+            opacity: 1;
+        }
     </style>
 
 </head>
@@ -148,7 +152,7 @@
                 </li>
 
                 <li>
-                    <a href="#" class="ai-icon" aria-expanded="false">
+                    <a href="{{ route('user.withdraw') }}" class="ai-icon" aria-expanded="false">
                         <i class="fa fa-arrow-circle-up"></i>
                         <span class="nav-text">Withdraw</span>
                     </a>
