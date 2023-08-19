@@ -34,7 +34,17 @@
                                                     {{ session()->get('success') }}
                                                 </div>
                                             @endif
-                                            <form method="POST" action="{{ route('user.withdraw') }}">
+                                            @if(session()->has('nop'))
+                                                <div class="alert alert-danger">
+                                                    {{ session()->get('nop') }}
+                                                </div>
+                                            @endif
+                                            @if(session()->has('low_balance'))
+                                                <div class="alert alert-danger">
+                                                    {{ session()->get('low_balance') }}
+                                                </div>
+                                            @endif
+                                            <form method="POST" action="{{ route('user.processWithdraw') }}">
                                                 @csrf
 
                                                 <div class="row">

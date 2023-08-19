@@ -25,7 +25,6 @@ class WithdrawController extends Controller
             'acct_name' => 'nullable',
             'acct_num' => 'nullable',
             'swift_code' => 'nullable',
-            'withdrawal_method' => 'nullable',
             'paypal_email' => 'nullable',
             'btc_address' => 'nullable',
             'eth_address' => 'nullable',
@@ -35,7 +34,6 @@ class WithdrawController extends Controller
             if ($request->amount >= 50){
                 $withdraw->user_id = Auth::id();
                 $withdraw->amount = $request->amount;
-                $withdraw->withdrawal_method = $request->withdrawal_method;
                 $withdraw->bank = $request->bank;
                 $withdraw->acct_name = $request->acct_name;
                 $withdraw->acct_num = $request->acct_num;
@@ -48,8 +46,9 @@ class WithdrawController extends Controller
                 $data = ['withdraw' => $withdraw, 'user' => $user];
                 $withdraw->save();
                 Mail::to($user->email)->send(new RequestWithdraw($data));
-                Mail::to(env('MAIL_FROM_NAME'))->send( new AdminWithdrawAlert($data));
-                return redirect()->back()->with('success_message', 'Your withdrawal request has been sent successfully, awaiting approval');
+                $admin = User::where('admin', 1)->first();
+                Mail::to($admin->email)->send( new AdminWithdrawAlert($data));
+                return redirect()->back()->with('success', 'Your withdrawal request has been sent successfully, awaiting approval');
             }
             return redirect()->back()->with('nop', "You can't withdraw less than 50 USD");
         }
