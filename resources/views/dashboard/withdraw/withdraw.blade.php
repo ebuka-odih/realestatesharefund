@@ -59,7 +59,7 @@
                                                             <div class="col-12">
                                                                 <div class="form-group">
                                                                     <label class="form-control-label">Full Name</label>
-                                                                    <input maxlength="100" type="text" required="" class="form-control" id="firstname" value="{{ $user->lastname.' '.$user->firstname }}" placeholder="Enter Full Name" readonly="">
+                                                                    <input maxlength="100" type="text" required="" class="form-control" id="firstname" value="{{ $user->name }}" placeholder="Enter Full Name" readonly="">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label class="form-control-label">Email Address</label>
