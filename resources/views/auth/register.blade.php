@@ -54,7 +54,7 @@
 
                                     <div class="form-group">
                                         <label class="mb-1"><strong>Name</strong></label>
-                                        <input type="email" name="name" class="form-control" placeholder="fullname">
+                                        <input type="text" name="name" class="form-control" placeholder="fullname">
                                     </div>
                                     <div class="form-group">
                                         <label class="mb-1"><strong>Email</strong></label>
