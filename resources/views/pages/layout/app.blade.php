@@ -85,7 +85,7 @@
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
             </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
+            <i class="fa fa-list mobile-nav-toggle"></i>
         </nav>
         <div class="header-right d-flex d-none  d-md-none d-lg-block">
 

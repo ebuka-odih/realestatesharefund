@@ -12,4 +12,9 @@ class InvestController extends Controller
         $property = Property::all();
         return view('pages.index', compact('property'));
     }
+    public function property()
+    {
+        $property = Property::all();
+        return view('pages.properties', compact('property'));
+    }
 }

@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [InvestController::class, 'home'])->name('index');
-Route::view('/properties', 'pages.properties')->name('properties');
+Route::get('/properties', [InvestController::class, 'properties'])->name('properties');
 Route::view('/about', 'pages.about')->name('about');
 Route::view('/contact', 'pages.contact')->name('contact');
 
