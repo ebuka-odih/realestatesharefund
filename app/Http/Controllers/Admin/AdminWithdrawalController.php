@@ -16,18 +16,25 @@ class AdminWithdrawalController extends Controller
         $withdraw = Withdraw::all();
         return view('admin.transactions.withdrawal', compact('withdraw'));
     }
-
-    public function acceptDeposit($id)
+    public function approve_withdrawal($id)
     {
         $withdraw = Withdraw::findOrFail($id);
         $user = User::findOrFail($withdraw->user_id);
-        $user->balance += $withdraw->amoun;
-        $withdraw->status = 1;
+        $user->balance -= $withdraw->amount;
         $user->save();
+        $withdraw->status = 1;
         $withdraw->save();
-        $data = ['user' => $user, 'withdraw' => $withdraw];
-        Mail::to($user->email)->send(new ApproveWithdraw($data));
-        return redirect()->back()->with('success', 'Approved Successfully');
+        Mail::to($user->email)->send(new ApproveWithdraw($withdraw));
+        return redirect()->back()->with('success', "Withdrawal Approved Successfully");
     }
+
+    public function deleteWithdrawal($id)
+    {
+        $withdraw = Withdraw::findOrFail($id);
+        $withdraw->delete();
+        return redirect()->back();
+    }
+
+
 
 }

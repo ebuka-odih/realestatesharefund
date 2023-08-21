@@ -37,7 +37,7 @@
                             <div class="nk-block-head nk-block-head-sm">
                                 <div class="nk-block-between">
                                     <div class="nk-block-head-content">
-                                        <h3 class="nk-block-title page-title">Withdrawal</h3>
+                                        <h3 class="nk-block-title page-title">Withdrawals</h3>
                                     </div><!-- .nk-block-head-content -->
 
                                 </div><!-- .nk-block-between -->
@@ -61,14 +61,37 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @foreach($deposits as $item)
+                                                    @foreach($withdraw as $item)
                                                         <tr class="odd">
                                                             <td>{{ date('Y, M d') }}</td>
                                                             <td class="dtr-control sorting_1" tabindex="0">{{ $item->user->name }}</td>
-                                                            <td>@money($item->amount)</td>
-                                                            <td>{{ $item->payment_method->name }}</td>
-                                                            <td>{!! $item->status() !!}</td>
-                                                            <td>$162,700</td>
+                                                            <td>$@money($item->amount)</td>
+                                                            <td></td>
+                                                            <td>{!! $item->adminStatus() !!}</td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                                        <ul class="link-list-plain">
+                                                                            {{--                                                                            <li><a href="#">View</a></li>--}}
+                                                                            <li><a href="{{ route('admin.approve_withdrawal', $item->id) }}">Approve</a></li>
+                                                                            <li>
+                                                                                <form method="POST" action="{!! route('admin.deleteWithdrawal', $item->id) !!}" accept-charset="UTF-8">
+                                                                                    <input name="_method" value="DELETE" type="hidden">
+                                                                                    {{ csrf_field() }}
+
+                                                                                    <div class="btn-group btn-group-xs pull-right" role="group">
+                                                                                        <button data-toggle="tooltip" data-placement="top" type="submit" class="btn  btn-sm btn-danger" onclick="return confirm(&quot;Delete Deposit?&quot;)">
+                                                                                            <span class="fa flaticon-delete" aria-hidden="true"></span>Delete
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </form>
+
+
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
                                                         </tr>
                                                     @endforeach
                                                     </tbody>

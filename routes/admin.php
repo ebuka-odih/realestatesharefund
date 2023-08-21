@@ -24,8 +24,11 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
     Route::get('deposits', [AdminDepositController::class, 'deposits'])->name('deposits');
     Route::get('approve/deposit/{id}', [AdminDepositController::class, 'acceptDeposit'])->name('acceptDeposit');
     Route::delete('delete/{id}', [AdminDepositController::class, 'deleteDeposit'])->name('deleteDeposit');
-    Route::get('accept/deposit/{id}', [AdminDepositController::class, 'approveDeposit'])->name('approveDeposit');
+
     Route::get('withdrawal', [AdminWithdrawalController::class, 'withdrawal'])->name('withdrawal');
+    Route::get('approve/withdrawal/{id}', [AdminWithdrawalController::class, 'approve_withdrawal'])->name('approve_withdrawal');
+    Route::delete('delete/withdrawal/{id}', [AdminWithdrawalController::class, 'deleteWithdrawal'])->name('deleteWithdrawal');
+
 
     Route::get('image/{id}', [AdminImageController::class, 'image'])->name('image');
     Route::post('storeImage/', [AdminImageController::class, 'storeImage'])->name('storeImage');
