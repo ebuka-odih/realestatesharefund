@@ -21,7 +21,6 @@ class AdminController extends Controller
 
     public function changePasswordSave(Request $request)
     {
-
         $this->validate($request, [
             'current_password' => 'required|string',
             'new_password' => 'required|confirmed|min:8|string'

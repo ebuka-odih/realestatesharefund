@@ -79,7 +79,7 @@
                 </li>
 
                 <li class="d-md-block d-lg-none d-block ">
-                    <a style="background-color: black" class="nav-link" href="{{ route('login') }}">Sign Up</a>
+                    <a style="background-color: black" class="nav-link" href="{{ route('register') }}">Sign Up</a>
                 </li>
                 <li class="d-md-block d-lg-none d-block ">
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -89,7 +89,7 @@
         </nav>
         <div class="header-right d-flex d-none  d-md-none d-lg-block">
 
-            <a style="background-color: black" href="{{ route('login') }}" class="cmn-btn btn-sm ms-3">Sign Up</a>
+            <a style="background-color: black" href="{{ route('register') }}" class="cmn-btn btn-sm ms-3">Sign Up</a>
             <a href="{{ route('login') }}" class="cmn-btn btn-sm ms-3">Login</a>
         </div>
     </div>
