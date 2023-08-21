@@ -99,7 +99,7 @@
                                 <div class="header-info">
                                     <span class="text-black">{{ auth()->user()->name }}</span>
                                 </div>
-                                <img src="https://static-00.iconduck.com/assets.00/user-avatar-icon-2048x2048-wpp8os2d.png" width="20" alt=""/>
+                                <img style="height: 40px; width: 40px" src="https://static-00.iconduck.com/assets.00/user-avatar-icon-2048x2048-wpp8os2d.png"  alt=""/>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="{{ route('user.profile') }}" class="dropdown-item ai-icon">

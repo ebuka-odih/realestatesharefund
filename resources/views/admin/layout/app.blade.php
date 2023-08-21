@@ -92,11 +92,12 @@
                                 <h6 class="overline-title text-primary-alt">SETTING</h6>
                             </li><!-- .nk-menu-heading -->
                             <li class="nk-menu-item">
-                                <a href="html/gallery.html" class="nk-menu-link">
+                                <a href="{{ route('admin.security') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-setting"></em></span>
-                                    <span class="nk-menu-text">Setting</span>
+                                    <span class="nk-menu-text">Security</span>
                                 </a>
-                            </li><!-- .nk-menu-item -->
+                            </li>
+                            <!-- .nk-menu-item -->
 
                         </ul><!-- .nk-menu -->
                     </div><!-- .nk-sidebar-menu -->

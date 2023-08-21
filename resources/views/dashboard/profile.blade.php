@@ -3,12 +3,6 @@
 
 <div class="content-body" style="min-height: 1061px;">
     <div class="container-fluid">
-        <div class="page-titles">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
-            </ol>
-        </div>
         <!-- row -->
         <div class="row">
             <div class="col-lg-12">
@@ -19,7 +13,7 @@
                         </div>
                         <div class="profile-info">
                             <div class="profile-photo">
-                                <img src="images/profile/profile.png" class="img-fluid rounded-circle" alt="">
+                                <img src="{{ asset($user->avatar) }}" class="img-fluid rounded-circle" alt="">
                             </div>
                             <div class="profile-details">
                                 <div class="profile-name px-3 pt-2">

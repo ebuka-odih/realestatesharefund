@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('security', [AdminController::class, 'security'])->name('security');
+    Route::post('changePasswordSave', [AdminController::class, 'changePasswordSave'])->name('changePasswordSave');
 
     Route::get('users', [UserController::class, 'users'])->name('users');
     Route::get('users/detail/{id}', [UserController::class, 'userDetail'])->name('userDetail');
