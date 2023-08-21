@@ -1,7 +1,7 @@
 <x-mail::message>
 # Hello {{ $data['user']->name }}
 
-Your deposit sum of {{ $deposit->amount }} has been approved
+Your deposit sum of {{ $data['deposit']->amount }} has been approved
 <br>
 Login your dashboard for more details.
 

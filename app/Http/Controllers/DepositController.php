@@ -39,6 +39,7 @@ class DepositController extends Controller
             'payment_methods_id' => 'required',
         ]);
         $deposit = new Deposit();
+        $deposit->user_id = Auth::id();
         $deposit->amount = $request->amount;
         $deposit->payment_methods_id = $request->payment_methods_id;
         $deposit->save();

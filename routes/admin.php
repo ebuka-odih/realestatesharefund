@@ -22,6 +22,8 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
     Route::resource('funding', AdminFundingController::class);
 
     Route::get('deposits', [AdminDepositController::class, 'deposits'])->name('deposits');
+    Route::get('approve/deposit/{id}', [AdminDepositController::class, 'acceptDeposit'])->name('acceptDeposit');
+    Route::delete('delete/{id}', [AdminDepositController::class, 'deleteDeposit'])->name('deleteDeposit');
     Route::get('accept/deposit/{id}', [AdminDepositController::class, 'approveDeposit'])->name('approveDeposit');
     Route::get('withdrawal', [AdminWithdrawalController::class, 'withdrawal'])->name('withdrawal');
 

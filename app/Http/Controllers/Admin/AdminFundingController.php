@@ -29,6 +29,7 @@ class AdminFundingController extends Controller
         {
             $data->type = $request->type;
             $data->amount = $request->amount;
+            $data->status = 1;
             $data->user_id = $request->user_id;
             $user = User::findOrFail($data->user_id);
             $user->profit += $request->amount;
@@ -37,6 +38,7 @@ class AdminFundingController extends Controller
             return redirect()->back()->with('success', 'Funding Sent Successfully');
         }
         $data->type = $request->type;
+        $data->status = 1;
         $data->amount = $request->amount;
         $data->user_id = $request->user_id;
         $user = User::findOrFail($data->user_id);

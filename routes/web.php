@@ -40,6 +40,7 @@ include 'admin.php';
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], function(){
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('profile', [UserController::class, 'profile'])->name('profile');
 
     Route::get('deposit/bank-transfer', [DepositController::class, 'deposit'])->name('deposit');
     Route::get('deposit/crypto', [DepositController::class, 'crypto'])->name('crypto');
@@ -48,6 +49,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::post('cryptoDeposit', [DepositController::class, 'cryptoDeposit'])->name('cryptoDeposit');
     Route::patch('deposit/processPayment/{id}', [DepositController::class, 'processPayment'])->name('processPayment');
 
+
     Route::get('projects', [PropertyController::class, 'projects'])->name('projects');
     Route::get('projectDetail/{id}', [PropertyController::class, 'projectDetail'])->name('projectDetail');
 
@@ -55,5 +57,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::post('processWithdraw', [WithdrawController::class, 'processWithdraw'])->name('processWithdraw');
 
     Route::get('history/deposit', [TransactionsController::class, 'depositHistory'])->name('depositHistory');
+    Route::get('history/withdraw', [TransactionsController::class, 'withdrawalHistory'])->name('withdrawalHistory');
+    Route::get('history/funding', [TransactionsController::class, 'fundingHistory'])->name('fundingHistory');
 });
 

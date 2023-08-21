@@ -14,4 +14,25 @@ class Deposit extends Model
     {
         return $this->belongsTo(PaymentMethod::class, 'payment_methods_id');
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function adminStatus()
+    {
+        if ($this->status == 1)
+        {
+            return '<span class="tb-status text-success">Successful</span>';
+        }
+        return '<span class="tb-status text-warning">Pending</span>';
+    }
+    public function status()
+    {
+        if ($this->status == 1)
+        {
+            return '<span class="badge light badge-success">Successful</span>';
+        }
+        return '<span class="badge light badge-warning">Pending</span>';
+    }
 }

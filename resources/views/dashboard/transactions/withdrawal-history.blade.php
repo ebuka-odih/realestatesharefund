@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="form-head d-md-flex mb-sm-4 mb-3 align-items-start">
                 <div class="me-auto  d-lg-block">
-                    <h2 class="text-black font-w600">Deposit History</h2>
+                    <h2 class="text-black font-w600">Withdrawal History</h2>
                 </div>
             </div>
             <div class="row">
@@ -18,16 +18,15 @@
                             <div class="custom-tab-1">
                                 <ul class="nav nav-tabs col-lg-8 col-md-12 offset-lg-4">
                                     <li class="nav-item">
-                                        <a class="nav-link active"  href="{{ route('user.depositHistory') }}"><i class="fa fa-arrow-circle-down "></i> Deposits</a>
+                                        <a class="nav-link"  href="{{ route('user.depositHistory') }}"><i class="fa fa-arrow-circle-down "></i> Deposits</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link"  href="{{ route('user.withdrawalHistory') }}"><i class="fa fa-arrow-circle-up "></i> Withdrawal</a>
+                                        <a class="nav-link active"  href="{{ route('user.withdrawalHistory') }}"><i class="fa fa-arrow-circle-up "></i> Withdrawal</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link"  href="{{ route('user.fundingHistory') }}"><i class="fa fa-money-check"></i> Funding</a>
                                     </li>
                                 </ul>
-                                <br>
                                 <div class="tab-content">
                                     <div class="tab-pane fade active show" id="home1" role="tabpanel">
                                         <div class="col-lg-12">
@@ -43,19 +42,17 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach($deposits as $item)
-                                                            <tr>
-                                                                <td><strong>{{ date('Y, M d', strtotime($item->created_at)) }}</strong></td>
-                                                                <td>{{ $item->payment_method->name  }}</td>
-                                                                <td>$@money($item->amount)</td>
-                                                                <td>{!! $item->status() !!}</td>
-                                                                @if($item->status == 1)
-                                                                <td><a href="" class="btn btn-sm light btn-success">View</a></td>
-                                                                @else
-                                                                 <td><a href="{{ route('user.payment', $item->id) }}" class="btn btn-sm light btn-warning">View</a></td>
-                                                                @endif
-                                                            </tr>
-                                                        @endforeach
+                                                    @foreach($withdrawal as $item)
+                                                        <tr>
+                                                            <td><strong>{{ date('Y, M d', strtotime($item->created_at)) }}</strong></td>
+                                                            <td></td>
+                                                            <td>$@money($item->amount)</td>
+                                                            <td>{!! $item->status() !!}</td>
+                                                            <td>
+                                                                <a href="" class="btn btn-sm light btn-success">View</a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>

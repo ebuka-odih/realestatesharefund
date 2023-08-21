@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Invest;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,5 +15,11 @@ class UserController extends Controller
        $invested = Invest::whereUserId(auth()->id())->select('amount')->sum('amount');
        $total_property = Property::count();
        return view('dashboard.index', compact('invested', 'invested_count', 'total_property'));
+   }
+
+   public function profile()
+   {
+       $user = Auth::user();
+       return view('dashboard.profile', compact('user'));
    }
 }

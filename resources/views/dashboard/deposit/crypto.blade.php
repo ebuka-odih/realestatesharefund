@@ -33,8 +33,17 @@
                                                 <div class="basic-form">
                                                     <form action="{{ route('user.cryptoDeposit') }}" method="POST">
                                                         @csrf
+                                                        @if ($errors->any())
+                                                            <div class="alert alert-danger">
+                                                                <ul>
+                                                                    @foreach ($errors->all() as $error)
+                                                                        <li>{{ $error }}</li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @endif
                                                         <div class="mb-3">
-                                                            <select name="payment_methods_id" class="has-arrow form-control" id="">
+                                                            <select name="payment_methods_id" class="has-arrow form-control" id="" required>
                                                                 @foreach($p_method as $item)
                                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                                 @endforeach
@@ -44,7 +53,7 @@
                                                             <label for="">Enter Amount</label>
                                                             <div class="input-group mb-3">
                                                                 <span class="input-group-text">$</span>
-                                                                <input type="number" name="amount" class="form-control input-rounded" placeholder="1000">
+                                                                <input type="number" name="amount" required class="form-control input-rounded" placeholder="1000">
                                                             </div>
                                                         </div>
                                                         <div class="mt-2">

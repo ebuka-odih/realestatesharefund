@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('deposits', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('payment_methods_id');
+            $table->bigInteger('payment_methods_id')->nullable();
+            $table->bigInteger('user_id');
             $table->decimal('amount', 11, 2);
             $table->string('reference')->nullable();
             $table->integer('status')->default(0)->nullable();
