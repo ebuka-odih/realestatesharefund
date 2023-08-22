@@ -57,5 +57,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('history/deposit', [TransactionsController::class, 'depositHistory'])->name('depositHistory');
     Route::get('history/withdraw', [TransactionsController::class, 'withdrawalHistory'])->name('withdrawalHistory');
     Route::get('history/funding', [TransactionsController::class, 'fundingHistory'])->name('fundingHistory');
+
+    Route::post('property/invest', [InvestController::class, 'invest'])->name('invest');
+
+
 });
 

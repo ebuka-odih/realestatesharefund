@@ -28,7 +28,7 @@ class ApproveDeposit extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Approve Deposit',
+            subject: env('APP_NAME'),
         );
     }
 

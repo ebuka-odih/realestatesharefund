@@ -36,6 +36,16 @@
             opacity: 1;
         }
     </style>
+    <style>
+        .form-control {
+            background: #dbdada;
+            border: 0.0625rem solid #f0f1f5;
+            padding: 0.3125rem 1.25rem;
+            color: #6e6e6e;
+            height: 3.5rem;
+            border-radius: 0.5rem !important;
+        }
+    </style>
 
 </head>
 <body>

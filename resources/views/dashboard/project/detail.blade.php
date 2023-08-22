@@ -1,6 +1,7 @@
 @extends('dashboard.layout.app')
 @section('content')
 
+
 <div class="content-body" style="min-height: 1061px;">
     <div class="container-fluid">
 
@@ -107,14 +108,39 @@
                                                 <td>{{ $project->target_duration }}</td>
                                             </tr>
                                         </table>
-                                        <div class="d-flex align-items-end flex-wrap mt-4">
+                                        <form action="{{ route('user.invest') }}" method="POST">
+                                            @csrf
+                                            @if(session()->has('success'))
+                                                <div class="alert alert-success">
+                                                    {{ session()->get('success') }}
+                                                </div>
+                                            @endif
+                                            @if(session()->has('error'))
+                                                <div class="alert alert-danger">
+                                                    {{ session()->get('error') }}
+                                                </div>
+                                            @endif
+                                            <div class="d-flex align-items-end flex-wrap mt-4">
+                                                <input type="hidden" name="properties_id" value="{{ $project->id }}">
 
-                                            <!--Quanatity End-->
-                                            <div class="shopping-cart  mb-3 me-3">
-                                                <a class="btn btn-primary" href="javascript:void(0)"><i class="fa fa-arrow-right me-2"></i>
-                                                   Proceed</a>
+                                                <div class="col-12">
+                                                    <label for="">Enter Amount</label>
+                                                    <div class="input-group mb-3">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="number" name="amount" required class="form-control input-rounded" placeholder="1000">
+
+                                                    </div>
+                                                    <small class="text-danger">Enter min investment or higher</small>
+                                                </div>
+                                                <br>
+                                                <!--Quanatity End-->
+                                                <div class="shopping-cart mb-3 me-3">
+                                                    <button type="submit" class="btn btn-primary" ><i class="fa fa-arrow-right me-2"></i>
+                                                        Proceed</button>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>

@@ -165,7 +165,7 @@
                                 <div class="form-group">
                                     <label class="form-label mt-2" for="full-name">Price</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" name="price" value="{{ old('price') }}" class="form-control" id="full-name">
+                                        <input type="number" name="price" value="{{ old('price') }}" class="form-control" id="full-name">
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                 <div class="form-group">
                                     <label class="form-label mt-2" for="full-name">Rooms</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" name="rooms" value="{{ old('rooms') }}" id="full-name">
+                                        <input type="number" class="form-control" name="rooms" value="{{ old('rooms') }}" id="full-name">
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +183,7 @@
                                 <div class="form-group">
                                     <label class="form-label mt-2" for="full-name">Floor</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" name="floor" value="{{ old('floor') }}" id="full-name">
+                                        <input type="number" class="form-control" name="floor" value="{{ old('floor') }}" id="full-name">
                                     </div>
                                 </div>
                             </div>

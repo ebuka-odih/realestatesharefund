@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ApproveWithdraw extends Mailable
+class Invested extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,9 +18,10 @@ class ApproveWithdraw extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $data;
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -43,7 +44,7 @@ class ApproveWithdraw extends Mailable
     public function content()
     {
         return new Content(
-            markdown: 'emails.approve_withdraw',
+            markdown: 'emails.invested',
         );
     }
 

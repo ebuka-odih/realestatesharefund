@@ -14,4 +14,11 @@ class Property extends Model
     {
         return $this->hasMany(Image::class, 'properties_id');
     }
+
+
+
+    public function invest()
+    {
+        return $this->hasMany(Invest::class);
+    }
 }
