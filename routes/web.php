@@ -51,7 +51,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     Route::get('projects', [PropertyController::class, 'projects'])->name('projects');
     Route::get('projectDetail/{id}', [PropertyController::class, 'projectDetail'])->name('projectDetail');
-
     Route::get('withdraw', [WithdrawController::class, 'withdraw'])->name('withdraw');
     Route::post('processWithdraw', [WithdrawController::class, 'processWithdraw'])->name('processWithdraw');
 

@@ -3,10 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="0tSYF3KNOd6EE5V8qUlCumQqUb7R55ISS0lEghoo">
-    <meta name="description" content="CrowdSquare is a leading investment platform allowing people to invest in real estate online in an easy and secure way.">
+    <meta name="description" content="{{ env('APP_NAME') }} is a leading investment platform allowing people to invest in real estate online in an easy and secure way.">
 </head>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,15 +12,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="0tSYF3KNOd6EE5V8qUlCumQqUb7R55ISS0lEghoo">
     <title>
-        CrowdSquare -  Invest in Real Estate Online
+        {{ env('APP_NAME') }} -  Invest in Real Estate Online
     </title>
-    .
-
     <link rel="stylesheet" href="{{ asset('css/cookie.css') }}">
-
-
     <link href="https://crowdsq.com/asset/frontend/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
@@ -37,9 +30,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/iziToast.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
-
 <body>
 
 <h1> {{ env('APP_NAME') }} - Invest in real estate online </h1>

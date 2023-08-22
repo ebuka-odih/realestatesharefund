@@ -48,7 +48,7 @@
                                             @endif
                                             <span class="review-text">({{ $item->reviews ? : "0" }} reviews) </span>
                                             <p class="price">$@money($item->price)</p><br>
-                                            <p class="badge bg-info text-white mt-2">Min: $@money($item->min_price)</p>
+                                            <p class="badge bg-info text-white mt-2">Min Investment: $@money($item->min_price)</p>
                                         </div>
                                         <p>Type: <span class="item"> {{ $item->type }} </span></p>
                                         <p><i class="fa fa-location-arrow"></i> Location: <span class="item">{{ $item->building_location }}</span></p>

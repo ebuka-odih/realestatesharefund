@@ -118,7 +118,7 @@
                                 <div class="single-option">
                                     <p>Capital Back</p>
                                     <h6>
-                                        {{ $item->captial_return }}
+                                        {{ $item->capital_back }}
                                     </h6>
                                 </div>
                             </div>

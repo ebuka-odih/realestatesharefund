@@ -117,12 +117,9 @@
                                                                     <button data-toggle="tooltip" data-placement="top" type="submit" class="btn  btn-sm btn-danger" onclick="return confirm(&quot;Delete Property?&quot;)">
                                                                         <span class="fa flaticon-delete" aria-hidden="true"></span>Remove
                                                                     </button>
-
-
                                                                 </div>
-
                                                             </form>
-
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -231,6 +228,7 @@
                                     <label class="form-label mt-2" for="full-name">Money Invested</label>
                                     <div class="form-control-wrap">
                                         <input type="number" class="form-control" name="invested" value="{{ old('invested') }}" id="full-name">
+                                        <small class="text-danger">How much has been invested already</small>
                                     </div>
                                 </div>
                             </div>
@@ -262,7 +260,8 @@
                                 <div class="form-group">
                                     <label class="form-label mt-2" for="full-name">Return Rate</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" name="return_rate" value="{{ old('return_rate') }}" id="full-name">
+                                        <input type="number" class="form-control" name="return_rate" value="{{ old('return_rate') }}" id="full-name">
+                                        <small class="text-danger">Number of percentage</small>
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +269,8 @@
                                 <div class="form-group">
                                     <label class="form-label mt-2" for="full-name">Return For</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" name="return_for" value="{{ old('return_for') }}" id="full-name">
+                                        <input type="number" class="form-control" name="return_for" value="{{ old('return_for') }}" id="full-name">
+                                        <small class="text-danger">Number of months</small>
                                     </div>
                                 </div>
                             </div>
@@ -292,7 +292,8 @@
                                 <div class="form-group">
                                     <label class="form-label mt-2" for="full-name">Target Duration</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" name="target_duration" value="{{ old('target_duration') }}" id="full-name">
+                                        <input type="number" class="form-control" name="target_duration" value="{{ old('target_duration') }}" id="full-name">
+                                        <small class="text-danger">Number of months</small>
                                     </div>
                                 </div>
                             </div>
