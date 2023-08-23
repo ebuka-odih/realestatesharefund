@@ -22,4 +22,22 @@ class UserController extends Controller
        $user = Auth::user();
        return view('dashboard.profile', compact('user'));
    }
+
+   public function updateProfile(Request $request)
+   {
+       $data = [
+          'name' => 'nullable',
+          'email' => 'nullable',
+          'phone' => 'nullable',
+          'title' => 'nullable',
+          'address' => 'nullable',
+          'state' => 'nullable',
+          'city' => 'nullable',
+          'country' => 'nullable',
+       ];
+       $data = $request->validate($data);
+       $user = Auth::user();
+       $user->update($data);
+       return redirect()->back()->with('success', "Profile Updated Successfully");
+   }
 }

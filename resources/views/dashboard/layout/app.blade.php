@@ -38,7 +38,7 @@
     </style>
     <style>
         .form-control {
-            background: #dbdada;
+            background: #e5e2e2;
             border: 0.0625rem solid #f0f1f5;
             padding: 0.3125rem 1.25rem;
             color: #6e6e6e;

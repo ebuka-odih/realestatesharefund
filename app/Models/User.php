@@ -17,11 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -49,6 +45,15 @@ class User extends Authenticatable
             return '<span class="tb-status text-success">Active</span>';
         }
         return '<span class="tb-status text-danger">Inactive</span>';
+    }
+
+    public function getAvatarAttribute($value) {
+        if(!$this->attributes['avatar']) {
+            $colors = ['E91E63', '9C27B0', '673AB7', '3F51B5', '0D47A1', '01579B', '00BCD4', '009688', '33691E', '1B5E20', '33691E', '827717', 'E65100',  'E65100', '3E2723', 'F44336', '212121'];
+            $background = $colors[$this->id%count($colors)];
+            return "https://ui-avatars.com/api/?size=256&background=".$background."&color=fff&name=".urlencode($this->name);
+        }
+        return '/avatar/' . $this->attributes['avatar'];
     }
 
     public function funding()

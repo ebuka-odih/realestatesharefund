@@ -41,6 +41,7 @@ include 'admin.php';
 Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], function(){
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
+    Route::patch('updateProfile', [UserController::class, 'updateProfile'])->name('updateProfile');
 
     Route::get('deposit/bank-transfer', [DepositController::class, 'deposit'])->name('deposit');
     Route::get('deposit/crypto', [DepositController::class, 'crypto'])->name('crypto');

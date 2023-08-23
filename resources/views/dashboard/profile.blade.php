@@ -92,29 +92,127 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content">
-
-                                </div>
-                            </div>
-                            <!-- Modal -->
-                            <div class="modal fade" id="replyModal">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Post Reply</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <textarea class="form-control" rows="4">Message</textarea>
+                                    <div class="col-xl-6 offset-xl-3 col-lg-12">
+                                        <div class="basic-form">
+                                            <form action="{{ route('user.updateProfile') }}" method="POST">
+                                                @csrf
+                                                @method('PATCH')
+                                                @if ($errors->any())
+                                                    <div class="alert alert-danger">
+                                                        <ul>
+                                                            @foreach ($errors->all() as $error)
+                                                                <li>{{ $error }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                @endif
+                                                @if(session()->has('success'))
+                                                    <div class="alert alert-success">
+                                                        {{ session()->get('success') }}
+                                                    </div>
+                                                @endif
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" name="name" value="{{ old('name', $user->name) }}" class="form-control form-control-sm" placeholder="col-form-label-sm">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="email" name="email" value="{{ old('email', $user->email ) }}" class="form-control form-control-sm" placeholder="col-form-label-sm">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">Phone</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="tel" name="phone" value="{{ old('phone', $user->phone ) }}" class="form-control form-control-sm">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">Title</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="title" id="" class="form-control">
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                            <option value="Others">Others</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">Address</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" name="address" value="{{ old('address', $user->address ) }}" class="form-control form-control-sm">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">City</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" name="city" value="{{ old('city', $user->city ) }}" class="form-control form-control-sm" >
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">State</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" name="state" value="{{ old('state', $user->state ) }}" class="form-control form-control-sm" >
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">Country</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" name="country" value="{{ old('country', $user->country ) }}" class="form-control form-control-sm">
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                                                </div>
                                             </form>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">btn-close</button>
-                                            <button type="button" class="btn btn-primary">Reply</button>
+                                    </div>
+                                    <br>
+                                    <hr>
+                                    <div class="col-xl-6 offset-xl-3 col-lg-12">
+                                        <div class="basic-form">
+                                            <h4>Change Password</h4>
+                                            <form action="{{ route('user.cryptoDeposit') }}" method="POST">
+                                                @csrf
+                                                @if ($errors->any())
+                                                    <div class="alert alert-danger">
+                                                        <ul>
+                                                            @foreach ($errors->all() as $error)
+                                                                <li>{{ $error }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                @endif
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">Current Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password" name="current_password"  class="form-control form-control-sm" >
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">New Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password" name="new_password"  class="form-control form-control-sm" >
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="col-sm-2 col-form-label col-form-label-sm">Confirm New Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password" name="new_password_confirmation"  class="form-control form-control-sm">
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <button type="submit" class="btn btn-sm btn-primary">Update Password</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Modal -->
+
                         </div>
                     </div>
                 </div>
