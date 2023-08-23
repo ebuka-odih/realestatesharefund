@@ -49,6 +49,8 @@ class AdminFundingController extends Controller
         $user->balance += $request->amount;
         $funding->save();
         $user->save();
+        $data = ['user' => $user, 'funding' => $funding];
+        Mail::to($user->email)->send(new FundedMail($data));
         return redirect()->back()->with('success', 'Funding Sent Successfully');
     }
 }
