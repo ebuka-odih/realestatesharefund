@@ -124,7 +124,7 @@
                                                 <input type="hidden" name="properties_id" value="{{ $project->id }}">
 
                                                 <div class="col-12">
-                                                    <label for="">Enter Amount</label>
+                                                    <label for="">Enter Investment Amount</label>
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text">$</span>
                                                         <input type="number" name="amount" required class="form-control input-rounded" placeholder="1000">
