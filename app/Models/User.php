@@ -68,4 +68,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(Withdraw::class, 'user_id');
     }
+
 }
