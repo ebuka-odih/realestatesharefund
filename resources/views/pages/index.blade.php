@@ -71,7 +71,7 @@
                             @endforeach
 
                             <div class="thumb-bottom">
-                                <h4 class="title"><a href="https://crowdsq.com/investment/plan/details/7">
+                                <h4 class="title"><a href="{{ route('user.projectDetail', $item->id) }}">
                                     {{ $item->name }}</a></h4>
                                 <p class="location"><i class="bi bi-geo-alt"></i> {{ $item->building_location }}
                                 </p>
