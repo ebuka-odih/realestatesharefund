@@ -141,13 +141,10 @@
                         <h4 class="title">Our Services</h4>
                         <ul class="footer-link-list">
                             <li><a
-                                    href="{{ route('login') }}">Commercial Real Estate</a>
+                                    href="{{ route('commercial') }}">Commercial Real Estate</a>
                             </li>
                             <li><a
-                                    href="{{ route('login') }}">Residential Real Estate</a>
-                            </li>
-                            <li><a
-                                    href="{{ route('login') }}">Step By Step Guide</a>
+                                    href="{{ route('residential') }}">Residential Real Estate</a>
                             </li>
 
                         </ul>

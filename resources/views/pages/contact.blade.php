@@ -29,13 +29,13 @@
                             <div class="col-lg-6">
                                 <div class="contact-item">
                                     <h5 class="title">Address:</h5>
-                                    <p>2128 Kovar Road, Massachusetts, USA</p>
+                                    <p>405 Lexington Avenue, New York City, NY, 10174</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="contact-item">
                                     <h5 class="title">Contact:</h5>
-                                    <p class="mb-1">+1359 896 84 72</p>
+                                    <p class="mb-1">+1 202 734 7483</p>
                                     <p class="mb-0">Info@realestateharefund.com</p>
                                 </div>
                             </div>

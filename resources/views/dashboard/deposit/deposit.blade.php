@@ -29,7 +29,9 @@
                                     <div class="tab-pane fade active show" id="home1" role="tabpanel">
                                         <div class="pt-4">
                                             <h4>Request for bank transfer details</h4>
-                                            <p>Send message to our support to request for our bank transfer detail</p>
+                                            <p>
+                                                Send a message to our support services to request for our bank transfer details with the email below
+                                            </p>
                                             @if(session()->has('success'))
                                                 <div class="alert alert-success">
                                                     {{ session()->get('success') }}
