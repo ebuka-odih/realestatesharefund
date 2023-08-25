@@ -35,17 +35,6 @@
 
 <h1> {{ env('APP_NAME') }} - Invest in real estate online </h1>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B8D2BS69L8"></script>
-<script>
-    'use strict'
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-B8D2BS69L8");
-</script>
 
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-lg-between">
@@ -70,7 +59,7 @@
                 </li>
 
                 <li class="d-md-block d-lg-none d-block ">
-                    <a style="background-color: black" class="nav-link" href="{{ route('register') }}">Sign Up</a>
+                    <a style="" class="nav-link" href="{{ route('register') }}">Sign Up</a>
                 </li>
                 <li class="d-md-block d-lg-none d-block ">
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
