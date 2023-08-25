@@ -24,6 +24,7 @@ Route::get('/', [InvestController::class, 'home'])->name('index');
 Route::get('/properties', [InvestController::class, 'properties'])->name('properties');
 Route::view('/about', 'pages.about')->name('about');
 Route::view('/contact', 'pages.contact')->name('contact');
+Route::view('/demo', 'pages.demo2')->name('demo');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
