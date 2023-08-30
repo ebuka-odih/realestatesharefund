@@ -16,10 +16,8 @@
     </section>
     <!-- End Breadcrumbs -->
 
-
     <meta name="title" content="About Us">
     <meta name="description" content="CrowdSquare is an innovative crowdfunding platform that is revolutionizing the way investors access real estate.">
-
 
     <section class="about-section s-pt-120 s-pb-120">
         <div class="container">
@@ -84,7 +82,7 @@
                         <div class="accordion-item">
                             <h4 class="accordion-header" id="heading-1">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapseSix">
-                                    Can I Use The Platform If I Am Not From Bulgaria?
+                                    Can I Use The Platform If I Am Not From United State?
                                 </button>
                             </h4>
                             <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#accordionExample">
@@ -137,7 +135,7 @@
                             </h4>
                             <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <p> Real Estate Prices In Sofia Have Increased 8.5% Per Year Over The Last 8 Years. In Addition To That, Properties Have Generated Around 4.5% Of Rental Yield. Owners Of Rented Properties Have Obtained A Return On Investment Of ~13% Per Year Since 2015 (in EUR). The Future Returns Of Property Investments Are Unknown, They Can Be The Same, Higher, Lower Or Negative.</p>
+                                    <p> Real Estate Prices In United State Have Increased 8.5% Per Year Over The Last 8 Years. In Addition To That, Properties Have Generated Around 5% Of Rental Yield. Owners Of Rented Properties Have Obtained A Return On Investment Of ~13% Per Year Since 2015 (in EUR). The Future Returns Of Property Investments Are Unknown, They Can Be The Same, Higher, Lower Or Negative.</p>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +147,9 @@
                             </h4>
                             <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <p> We Cannot Guarantee That You Will Get Back The Amount That You Originally Invested. You Will Get Back The Money That You Invested And The Profit If The Value Of The Property In Which You Invested Increases Or Remains The Same. However, You Will Get Back Less Than The Amount Originally Invested If The Value Of The Property Decreases.</p>
+                                    <p>
+                                        We Can Guarantee That You Will Get Back The Amount That You Originally Invested. You Will Get Back The Money That You Invested And The Profit If The Value Of The Property In Which You Invested Increases.
+                                    </p>
                                 </div>
                             </div>
                         </div>
