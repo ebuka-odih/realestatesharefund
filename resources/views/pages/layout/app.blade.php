@@ -100,9 +100,8 @@
                         </div>
                         <ul class="footer-info-list mt-4">
                             <li>
-                                <span class="caption">Address</span>
-                                <span class="description">Address 1: 25 Krum Kyulyavkov, Sofia, Bulgaria</span>
-                                <span class="description">Address 2: 405 Lexington Avenue, New York City, NY, 10174</span>
+                                <p class="caption">Address</p><br>
+                                <span class="description">405 Lexington Avenue, New York City, NY, 10174</span>
                             </li>
 
                             <li>
