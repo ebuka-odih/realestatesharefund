@@ -55,7 +55,7 @@
                                         <p><i class="fa fa-location-arrow"></i> Location: <span class="item">{{ $item->building_location }}</span></p>
 
                                         <p class="text-content">
-                                            {{ $item->description  }}
+                                            {{ Str::limit($item->description, $limit = 100, $end = '...') }}
                                         </p>
                                     </div>
                                 </div>
