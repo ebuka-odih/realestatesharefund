@@ -27,7 +27,7 @@
                 </div>
                 <div class="nk-sidebar-brand">
                     <a href="{{ route('index') }}" class="logo-link nk-sidebar-logo">
-                       <h3 class="text-primary">{{ env('APP_NAME') }}</h3>
+                       <h3 class="text-primary">RESF</h3>
                     </a>
                 </div>
             </div><!-- .nk-sidebar-element -->
