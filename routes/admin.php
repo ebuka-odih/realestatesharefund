@@ -34,4 +34,5 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
 
     Route::get('image/{id}', [AdminImageController::class, 'image'])->name('image');
     Route::post('storeImage/', [AdminImageController::class, 'storeImage'])->name('storeImage');
+    Route::delete('delete/image/{id}', [AdminImageController::class, 'deleteImage'])->name('deleteImage');
 });
