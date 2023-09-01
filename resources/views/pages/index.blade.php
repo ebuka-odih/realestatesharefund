@@ -122,18 +122,13 @@
                     <div class="col-xl-4 col-md-6">
                     <div class="invest-card">
                         <div class="invest-card-thumb">
-                            <a href="" class="plan-link"></a>
+                            <a href="{{ route('pro.details', $item->id) }}" class="plan-link"></a>
 
-                            <div class="slider">
                                 @foreach ($item->images as $image)
-                                    <div class="slide">
+                                   @if($loop->first)
                                         <img  src="{{ asset($image->image_path) }}" alt="Property Image">
-                                    </div>
+                                    @endif
                                 @endforeach
-                                <button class="btn btn-next">></button>
-                                <button class="btn btn-prev">< </button>
-                            </div>
-
 
                             <div class="thumb-bottom">
                                 <h4 class="title"><a href="{{ route('user.projectDetail', $item->id) }}">
@@ -146,7 +141,7 @@
                                     <i class="far fa-star"></i>
                                     <i class="far fa-star"></i>
                                     <i class="far fa-star"></i>
-                                    <span class="text-white">({{ $item->reviews }} Reviews)</span>
+                                    <span class="text-white">({{ $property->reviews ? : '0' }} Reviews)</span>
                                 </div>
                             </div>
                         </div>
@@ -165,19 +160,19 @@
                             <div class="other-options">
                                 <div class="single-option">
                                     <p>Target Duration</p>
-                                    <h6>{{ $item->target_duration }} Mo</h6>
+                                    <h6>{{ $item->target_duration }} Month(s)</h6>
                                 </div>
                                 <div class="single-option">
                                     <p>Minimum Amount</p>
                                     <h6>
                                                                                     <span>
-                                      {{ $item->min_price }} EUR</span>
+                                      {{ $item->min_price }} USD</span>
                                     </h6>
                                 </div>
                                 <div class="single-option">
                                     <p>Return For</p>
                                     <h6>
-                                        {{ $item->return_for }} Months
+                                        {{ $item->return_for }} Month(s)
                                     </h6>
                                 </div>
                                 <div class="single-option">

@@ -1,65 +1,6 @@
 @extends('pages.layout.app')
 @section('content')
-    <style>
-        .slider {
-            width: 100%;
-            max-width: 800px;
-            height: 350px;
-            position: relative;
-            /* overflow: hidden; */
-        }
 
-        .slide {
-            width: 100%;
-            max-width: 800px;
-            height: 350px;
-            position: absolute;
-            transition: all 0.5s;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .btn {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            z-index: 10px;
-            cursor: pointer;
-            background-color: #fff;
-            font-size: 18px;
-        }
-
-        .btn:active {
-            transform: scale(1.1);
-        }
-
-        .btn-prev {
-            top: 45%;
-            left: 2%;
-        }
-
-        .btn-next {
-            top: 45%;
-            right: 2%;
-        }
-
-        .slider {
-            width: 100%;
-            max-width: 800px;
-            height: 350px;
-            position: relative;
-            overflow: hidden;  /* <===  */
-            border-radius: 15px;
-        }
-
-    </style>
 <main id="main" class="main-img">
     <section class="breadcrumbs" style="background-image: url(https://crowdsq.com/asset/images/breadcrumbs/breadcrumbs.jpg);">
         <div class="container">
@@ -77,24 +18,21 @@
     <section class="s-pt-80 s-pb-80">
         <div class="container">
             <div class="row gy-4" id="filter">
+
                 @foreach($property as $item)
                     <div class="col-xl-4 col-md-6">
                         <div class="invest-card">
                             <div class="invest-card-thumb">
-                                <a href="" class="plan-link"></a>
+                                <a href="{{ route('pro.details', $item->id) }}" class="plan-link"></a>
 
-                                <div class="slider">
-                                    @foreach ($item->images as $image)
-                                        <div class="slide">
-                                            <img  src="{{ asset($image->image_path) }}" alt="Property Image">
-                                        </div>
-                                    @endforeach
-                                    <button class="btn btn-next">></button>
-                                    <button class="btn btn-prev">< </button>
-                                </div>
+                                @foreach ($item->images as $image)
+                                    @if($loop->first)
+                                        <img  src="{{ asset($image->image_path) }}" alt="Property Image">
+                                    @endif
+                                @endforeach
 
                                 <div class="thumb-bottom">
-                                    <h4 class="title"><a href="{{ route('user.projectDetail', $item->id) }}">
+                                    <h4 class="title"><a href="{{ route('pro.details', $item->id) }}">
                                             {{ $item->name }}</a></h4>
                                     <p class="location"><i class="bi bi-geo-alt"></i> {{ $item->building_location }}
                                     </p>
@@ -117,32 +55,32 @@
                                             %
                                         </h4>
                                     </div>
-                                    <a href="#0" class="calculate-btn" data-plan="{&quot;id&quot;:7,&quot;plan_name&quot;:&quot;One-bedroom apartment close to a mountain&quot;,&quot;views&quot;:&quot;175&quot;,&quot;amount_type&quot;:&quot;0&quot;,&quot;minimum_amount&quot;:&quot;5000.00000000&quot;,&quot;maximum_amount&quot;:&quot;86000.00000000&quot;,&quot;amount&quot;:null,&quot;return_interest&quot;:&quot;5.00000000&quot;,&quot;interest_status&quot;:&quot;percentage&quot;,&quot;return_for&quot;:&quot;1&quot;,&quot;how_many_time&quot;:&quot;3&quot;,&quot;every_time&quot;:&quot;7&quot;,&quot;capital_back&quot;:&quot;1&quot;,&quot;status&quot;:&quot;1&quot;,&quot;property&quot;:{&quot;amnities&quot;:{&quot;Price&quot;:&quot;86000&quot;,&quot;Square meters&quot;:&quot;55&quot;,&quot;Rooms&quot;:&quot;2&quot;,&quot;Floor&quot;:&quot;2&quot;,&quot;Year of building&quot;:&quot;2017&quot;},&quot;address&quot;:&quot;Vitosha&quot;,&quot;details&quot;:&quot;This apartment consists of two rooms and a bathroom. The area is very peaceful and quiet but at the same time it is linked to good public transport. There are many stores, restaurants, pharmacies, gyms and other service providers near by. It is possible to purchase a parking lot in the same building.&quot;,&quot;icons&quot;:[&quot;fas fa-tag&quot;,&quot;fas fa-ruler&quot;,&quot;as fa-booth-curtain&quot;,&quot;fas fa-sort-circle&quot;,&quot;fas fa-sort-calendar&quot;]},&quot;image&quot;:&quot;648324d2ed7e61686316242.jpg&quot;,&quot;gallery&quot;:[{&quot;id&quot;:1,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2b798a1686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2b798a1686316242.jpg&quot;},{&quot;id&quot;:2,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2c95551686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2c95551686316242.jpg&quot;},{&quot;id&quot;:3,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2d28691686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2d28691686316242.jpg&quot;},{&quot;id&quot;:4,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2dc2be1686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2dc2be1686316242.jpg&quot;},{&quot;id&quot;:5,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2e57c81686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2e57c81686316242.jpg&quot;}],&quot;is_featured&quot;:&quot;1&quot;,&quot;map&quot;:null,&quot;created_at&quot;:&quot;2023-06-09T13:10:43.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-08-11T13:54:37.000000Z&quot;,&quot;reviews&quot;:[]}"><i class="fas fa-calculator"></i>Investment Calculator</a>
+                                    {{--                                <a href="#0" class="calculate-btn" data-plan="{&quot;id&quot;:7,&quot;plan_name&quot;:&quot;One-bedroom apartment close to a mountain&quot;,&quot;views&quot;:&quot;175&quot;,&quot;amount_type&quot;:&quot;0&quot;,&quot;minimum_amount&quot;:&quot;5000.00000000&quot;,&quot;maximum_amount&quot;:&quot;86000.00000000&quot;,&quot;amount&quot;:null,&quot;return_interest&quot;:&quot;5.00000000&quot;,&quot;interest_status&quot;:&quot;percentage&quot;,&quot;return_for&quot;:&quot;1&quot;,&quot;how_many_time&quot;:&quot;3&quot;,&quot;every_time&quot;:&quot;7&quot;,&quot;capital_back&quot;:&quot;1&quot;,&quot;status&quot;:&quot;1&quot;,&quot;property&quot;:{&quot;amnities&quot;:{&quot;Price&quot;:&quot;86000&quot;,&quot;Square meters&quot;:&quot;55&quot;,&quot;Rooms&quot;:&quot;2&quot;,&quot;Floor&quot;:&quot;2&quot;,&quot;Year of building&quot;:&quot;2017&quot;},&quot;address&quot;:&quot;Vitosha&quot;,&quot;details&quot;:&quot;This apartment consists of two rooms and a bathroom. The area is very peaceful and quiet but at the same time it is linked to good public transport. There are many stores, restaurants, pharmacies, gyms and other service providers near by. It is possible to purchase a parking lot in the same building.&quot;,&quot;icons&quot;:[&quot;fas fa-tag&quot;,&quot;fas fa-ruler&quot;,&quot;as fa-booth-curtain&quot;,&quot;fas fa-sort-circle&quot;,&quot;fas fa-sort-calendar&quot;]},&quot;image&quot;:&quot;648324d2ed7e61686316242.jpg&quot;,&quot;gallery&quot;:[{&quot;id&quot;:1,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2b798a1686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2b798a1686316242.jpg&quot;},{&quot;id&quot;:2,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2c95551686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2c95551686316242.jpg&quot;},{&quot;id&quot;:3,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2d28691686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2d28691686316242.jpg&quot;},{&quot;id&quot;:4,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2dc2be1686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2dc2be1686316242.jpg&quot;},{&quot;id&quot;:5,&quot;src&quot;:&quot;https:\/\/crowdsq.com\/asset\/images\/gallery\/648324d2e57c81686316242.jpg&quot;,&quot;image&quot;:&quot;648324d2e57c81686316242.jpg&quot;}],&quot;is_featured&quot;:&quot;1&quot;,&quot;map&quot;:null,&quot;created_at&quot;:&quot;2023-06-09T13:10:43.000000Z&quot;,&quot;updated_at&quot;:&quot;2023-08-11T13:54:37.000000Z&quot;,&quot;reviews&quot;:[]}"><i class="fas fa-calculator"></i>Investment Calculator</a>--}}
                                 </div>
 
                                 <div class="other-options">
                                     <div class="single-option">
                                         <p>Target Duration</p>
-                                        <h6>{{ $item->target_duration }} Mo</h6>
+                                        <h6>{{ $item->target_duration }} Month(s)</h6>
                                     </div>
                                     <div class="single-option">
                                         <p>Minimum Amount</p>
                                         <h6>
 
-                                            <span>
-                                      @money($item->min_price) EUR</span>
+                                        <span>
+                                      {{ $item->min_price }} USD</span>
                                         </h6>
                                     </div>
                                     <div class="single-option">
                                         <p>Return For</p>
                                         <h6>
-                                            {{ $item->return_for }} Months
+                                            {{ $item->return_for }} Month(s)
                                         </h6>
                                     </div>
                                     <div class="single-option">
                                         <p>Capital Back</p>
                                         <h6>
-                                            {{ $item->captial_return }}
+                                            {{ $item->capital_back }}
                                         </h6>
                                     </div>
                                 </div>
@@ -156,7 +94,6 @@
                         </div>
                     </div>
                 @endforeach
-
 
             </div>
 
@@ -268,31 +205,6 @@
     </div>
 
 
-
-    <div class="modal fade" id="bookmark" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <form action="" method="post">
-                <input type="hidden" name="_token" value="r3peT7lVVBuQEaoWJtAWQYIyEcoWKkmLAdXNOYjV">                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Bookmarked Plan</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="bookmark-text">Are You Sure To Bookmark This Plan For Future Invest ?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Bookmark</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-
     <div class="modal fade" id="bookmark-remove" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <form action="" method="post">
@@ -316,58 +228,37 @@
     </div>
 </main>
 
-<script>
-    "use strict";
-    // Select all slides
-    const slides = document.querySelectorAll(".slide");
 
-    // loop through slides and set each slides translateX
-    slides.forEach((slide, indx) => {
-        slide.style.transform = `translateX(${indx * 100}%)`;
-    });
 
-    // select next slide button
-    const nextSlide = document.querySelector(".btn-next");
 
-    // current slide counter
-    let curSlide = 0;
-    // maximum number of slides
-    let maxSlide = slides.length - 1;
 
-    // add event listener and navigation functionality
-    nextSlide.addEventListener("click", function () {
-        // check if current slide is the last and reset current slide
-        if (curSlide === maxSlide) {
-            curSlide = 0;
-        } else {
-            curSlide++;
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
         }
 
-        //   move slide by -100%
-        slides.forEach((slide, indx) => {
-            slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-        });
-    });
-
-    // select next slide button
-    const prevSlide = document.querySelector(".btn-prev");
-
-    // add event listener and navigation functionality
-    prevSlide.addEventListener("click", function () {
-        // check if current slide is the first and reset current slide to last
-        if (curSlide === 0) {
-            curSlide = maxSlide;
-        } else {
-            curSlide--;
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
         }
 
-        //   move slide by 100%
-        slides.forEach((slide, indx) => {
-            slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-        });
-    });
-
-
-</script>
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 
 @endsection

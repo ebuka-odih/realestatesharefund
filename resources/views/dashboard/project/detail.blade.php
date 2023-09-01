@@ -27,7 +27,7 @@
                                       @foreach ($project->images as $image)
                                          <li role="presentation" >
                                             <div class="column">
-                                                <img src="{{ asset($image->image_path) }}" alt="Nature" style="width:100%" onclick="myFunction(this);">
+                                                <img src="{{ asset($image->image_path) }}" style="width:100%" onclick="myFunction(this);">
                                             </div>
                                          </li>
                                       @endforeach
@@ -73,7 +73,7 @@
                                         <table class="table" style="width:100%">
                                             <tr>
                                                 <th>Min investment:</th>
-                                                <td>{{ $project->min_price }}</td>
+                                                <td>@@money($project->min_price)</td>
                                             </tr>
                                             <tr>
                                                 <th>Return Rate:</th>
@@ -89,7 +89,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Target Duration:</th>
-                                                <td>{{ $project->target_duration }}</td>
+                                                <td>{{ $project->target_duration }} Month(s)</td>
                                             </tr>
                                         </table>
                                         <form action="{{ route('user.invest') }}" method="POST">

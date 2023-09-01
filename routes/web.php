@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\InvestController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\TransactionsController;
@@ -20,8 +21,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [InvestController::class, 'home'])->name('index');
-Route::get('/properties', [InvestController::class, 'properties'])->name('properties');
+Route::get('/', [PageController::class, 'home'])->name('index');
+Route::get('/properties', [PageController::class, 'properties'])->name('properties');
+Route::get('/property/details/{id}', [PageController::class, 'details'])->name('pro.details');
+
 Route::view('/about', 'pages.about')->name('about');
 Route::view('/contact', 'pages.contact')->name('contact');
 Route::view('/commercial-real-estate', 'pages.commercial')->name('commercial');
