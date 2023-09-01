@@ -210,53 +210,9 @@
                                     </div>
                                 </div><!-- content-box end -->
                             </div>
-
-                            <div class="property-details-wrapper mt-5" id="reviewBox">
-                                <div class="content-box">
-                                    <h4 class="title">Give A Review</h4>
-
-                                    <div class="alert alert-primary d-flex align-items-center" role="alert">
-                                        <i class="fas fa-exclamation-circle me-2"></i>
-                                        <div>
-                                            To Give Review Please Invest First
-                                        </div>
-                                    </div>
-
-                                    <form action="" method="POST" id="review">
-                                        <input type="hidden" name="_token" value="UEyWhn3oCyfyjkmFpeQdkhlxuSvsBeNMEU2GRRAM">                                    <div class="row gy-4">
-                                            <div class="col-lg-12">
-                                                <fieldset>
-                                                <span class="star-cb-group">
-                                                    <input type="radio" id="rating-5" name="rating" value="5"><label for="rating-5">5</label>
-                                                    <input type="radio" id="rating-4" name="rating" value="4"><label for="rating-4">4</label>
-                                                    <input type="radio" id="rating-3" name="rating" value="3"><label for="rating-3">3</label>
-                                                    <input type="radio" id="rating-2" name="rating" value="2"><label for="rating-2">2</label>
-                                                    <input type="radio" id="rating-1" name="rating" value="1"><label for="rating-1">1</label>
-
-                                                </span>
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <input type="text" name="name" class="form-control" placeholder="Full Name">
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <input type="email" name="email" class="form-control" placeholder="Enter Email">
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <textarea name="message" class="form-control" placeholder="Write Message"></textarea>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <button type="submit" class="cmn-btn">Submit</button>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                </div><!-- content-box end -->
-                            </div>
                         </div>
 
-
-{{--                        calculator here--}}
+                        {{--                        calculator here--}}
                     </div>
 
 
