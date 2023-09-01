@@ -177,7 +177,7 @@
                                 <div class="single-option">
                                     <p>Return For</p>
                                     <h6>
-                                        {{ $item->return_for }}
+                                        {{ $item->return_for }} Months
                                     </h6>
                                 </div>
                                 <div class="single-option">
