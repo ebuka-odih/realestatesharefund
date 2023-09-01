@@ -141,7 +141,7 @@
                                     <i class="far fa-star"></i>
                                     <i class="far fa-star"></i>
                                     <i class="far fa-star"></i>
-                                    <span class="text-white">({{ $property->reviews ? : '0' }} Reviews)</span>
+                                    <span class="text-white">({{ $item->reviews ? : '0' }} Reviews)</span>
                                 </div>
                             </div>
                         </div>
