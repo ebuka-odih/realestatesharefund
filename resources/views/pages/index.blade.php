@@ -131,7 +131,7 @@
                                 @endforeach
 
                             <div class="thumb-bottom">
-                                <h4 class="title"><a href="{{ route('user.projectDetail', $item->id) }}">
+                                <h4 class="title"><a href="{{ route('user.details', $item->id) }}">
                                     {{ $item->name }}</a></h4>
                                 <p class="location"><i class="bi bi-geo-alt"></i> {{ $item->building_location }}
                                 </p>
